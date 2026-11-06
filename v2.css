@@ -123,3 +123,8 @@ html[lang=ja] .site-nav .nav-links a{font-size:clamp(12px,3.65vw,16px);padding-i
 @keyframes fireworkDrop{0%,42%{transform:translateY(0)}80%,100%{transform:translateY(12px)}}
 @keyframes fireworkCore{0%,25%{opacity:0;transform:scale(.2)}29%{opacity:1;transform:scale(1.6)}45%,100%{opacity:0;transform:scale(.3)}}
 @media(prefers-reduced-motion:reduce){.firework-rocket,.firework-afterglow{display:none}.firework-bloom,.firework-bloom i{animation:none}.firework-bloom i{opacity:.9;transform:rotate(var(--ray)) translateY(17px) scaleY(.6)}}
+
+/* Seasonal navigation: allow natural wrapping for all seven languages. */
+.site-nav .nav-links .seasonal-nav{white-space:normal;max-width:24em;font-size:clamp(13px,1.2vw,18px);line-height:1.35;text-align:center;text-wrap:balance}
+@media(min-width:1101px){.site-nav .nav-links{min-width:0}.site-nav .nav-links .seasonal-nav{max-width:260px}}
+@media(max-width:600px){.site-nav .nav-links .seasonal-nav{max-width:none;font-size:14px}}
