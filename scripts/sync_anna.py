@@ -9,9 +9,12 @@ def matches(text):
     return bool(re.search(r'我[与與和跟]安娜|\b(?:me\s*(?:&|and)\s*anna|anna\s*(?:&|and)\s*me)\b',text,re.I))
 def merge(old, xml):
     root=ET.fromstring(xml)
-    if root.findtext('yt:channelId',namespaces=NS)!=CHANNEL: raise ValueError('Unexpected channel; previous list preserved')
+    channel_id=root.findtext('yt:channelId',namespaces=NS)
+    author_uri=root.findtext('a:author/a:uri',namespaces=NS)
+    if channel_id not in (CHANNEL,CHANNEL[2:]) or author_uri!='https://www.youtube.com/channel/'+CHANNEL: raise ValueError('Unexpected channel; previous list preserved')
     items={x['id']:x for x in old['items']}
     for e in root.findall('a:entry',NS):
+        if e.findtext('yt:channelId',namespaces=NS)!=CHANNEL: raise ValueError('Unexpected entry channel; previous list preserved')
         vid=e.findtext('yt:videoId',default='',namespaces=NS)
         title=e.findtext('a:title',default='',namespaces=NS)
         description=e.findtext('m:group/m:description',default='',namespaces=NS)
