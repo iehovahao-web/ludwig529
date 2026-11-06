@@ -8,7 +8,7 @@
 
 /* Full-screen opening; separate reserved banner area. */
 .hero .hero-inner{max-width:none;width:100%;display:flex;flex-direction:column;gap:0;padding:0}
-.hero .hero-art{order:0;position:relative;width:100%;height:calc(100svh - 80px);min-height:420px;margin:0;padding:0;border:0;box-shadow:none;background:#071a33;overflow:hidden}
+.hero .hero-art{order:0;position:relative;width:100%;max-width:none;height:calc(100svh - 80px);min-height:420px;margin:0;padding:0;border:0;box-shadow:none;background:#071a33;overflow:hidden}
 .hero .hero-art:before{content:"";display:block;position:absolute;inset:-28px;background:url("assets/japan-hero-3000.png") center/cover no-repeat;filter:blur(24px) brightness(.35);z-index:0}
 .hero .hero-art img{position:relative;z-index:1;width:100%;height:100%;max-width:none;object-fit:contain;box-shadow:none}
 .hero-banner-slot{order:1;flex:none;width:100%;height:120px;background:#071a33;border-block:1px solid #294369}
