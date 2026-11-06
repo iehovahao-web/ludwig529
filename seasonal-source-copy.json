@@ -1,0 +1,92 @@
+{
+  "seasonsTitle": {
+    "zh": "日本賞櫻・賞楓・花火資訊",
+    "en": "Cherry Blossoms, Autumn Leaves & Fireworks in Japan",
+    "ja": "全国のお花見・紅葉狩り・花火大会情報",
+    "ko": "일본 벚꽃·단풍·불꽃놀이 정보",
+    "es": "Cerezos, hojas de otoño y fuegos artificiales en Japón",
+    "de": "Kirschblüte, Herbstlaub und Feuerwerk in Japan",
+    "it": "Ciliegi, foliage e fuochi d'artificio in Giappone"
+  },
+  "seasonsNote": {
+    "zh": "連到官方旅遊網站與持續更新的資訊網站，查看今年的開花、紅葉見頃與花火大會日程。本站不售票、不主辦活動，也不自行預測日期。",
+    "en": "Links to official tourism and regularly updated information sites for this year's bloom dates, autumn colours and fireworks schedules. This site does not sell tickets, organise events or make its own forecasts.",
+    "ja": "今年の開花・紅葉の見頃・花火大会の日程は、公式観光サイトや随時更新される情報サイトでご確認ください。本サイトはチケット販売・主催・独自の予想は行っていません。",
+    "ko": "올해의 개화 시기, 단풍 절정, 불꽃놀이 일정은 공식 관광 사이트와 수시로 업데이트되는 정보 사이트에서 확인하세요. 이 사이트는 티켓 판매나 행사 주최를 하지 않으며 자체 예측도 제공하지 않습니다.",
+    "es": "Enlaces a sitios oficiales de turismo y de información actualizada con las fechas de floración, el color otoñal y los fuegos artificiales de este año. Este sitio no vende entradas, no organiza eventos ni hace previsiones propias.",
+    "de": "Links zu offiziellen Tourismus- und laufend aktualisierten Infoseiten mit den diesjährigen Terminen für Kirschblüte, Herbstfärbung und Feuerwerk. Diese Website verkauft keine Tickets, veranstaltet nichts und erstellt keine eigenen Prognosen.",
+    "it": "Link a siti turistici ufficiali e a siti informativi aggiornati con le date di quest'anno per fioritura, foliage e fuochi d'artificio. Questo sito non vende biglietti, non organizza eventi e non fa previsioni proprie."
+  },
+  "sakuraTitle": {
+    "zh": "全日本賞櫻",
+    "en": "Cherry blossom viewing",
+    "ja": "お花見（全国）",
+    "ko": "전국 벚꽃 구경",
+    "es": "Ver los cerezos en flor",
+    "de": "Kirschblüten sehen",
+    "it": "Ammirare i ciliegi in fiore"
+  },
+  "sakuraDesc": {
+    "zh": "全國各地開花預測與賞櫻名所",
+    "en": "Bloom forecasts and viewing spots across Japan",
+    "ja": "全国の開花予想と桜の名所",
+    "ko": "전국 개화 예상과 벚꽃 명소",
+    "es": "Previsiones de floración y lugares en todo Japón",
+    "de": "Blütenprognosen und schöne Orte in ganz Japan",
+    "it": "Previsioni di fioritura e luoghi in tutto il Giappone"
+  },
+  "koyoTitle": {
+    "zh": "全日本賞楓",
+    "en": "Autumn leaves",
+    "ja": "紅葉狩り（全国）",
+    "ko": "전국 단풍 구경",
+    "es": "Ver el follaje de otoño",
+    "de": "Herbstlaub sehen",
+    "it": "Ammirare il foliage"
+  },
+  "koyoDesc": {
+    "zh": "全國紅葉見頃預測與名所",
+    "en": "Peak-colour forecasts and spots across Japan",
+    "ja": "全国の紅葉見頃予想と名所",
+    "ko": "전국 단풍 절정 예상과 명소",
+    "es": "Previsiones del mejor color y lugares en todo Japón",
+    "de": "Prognosen zur Laubfärbung und Orte in ganz Japan",
+    "it": "Previsioni del foliage e luoghi in tutto il Giappone"
+  },
+  "hanabiTitle": {
+    "zh": "全日本花火大會",
+    "en": "Fireworks festivals",
+    "ja": "花火大会（全国）",
+    "ko": "전국 불꽃놀이 축제",
+    "es": "Festivales de fuegos artificiales",
+    "de": "Feuerwerksfeste",
+    "it": "Festival di fuochi d'artificio"
+  },
+  "hanabiDesc": {
+    "zh": "全國花火大會日期與會場一覽",
+    "en": "Dates and venues of festivals across Japan",
+    "ja": "全国の開催日・会場一覧",
+    "ko": "전국 축제 날짜와 장소",
+    "es": "Fechas y lugares en todo Japón",
+    "de": "Termine und Orte in ganz Japan",
+    "it": "Date e luoghi in tutto il Giappone"
+  },
+  "jaOnlyNote": {
+    "zh": "日語網站",
+    "en": "Japanese-language site",
+    "ja": "",
+    "ko": "일본어 사이트",
+    "es": "Sitio en japonés",
+    "de": "Website auf Japanisch",
+    "it": "Sito in giapponese"
+  },
+  "open": {
+    "zh": "前往網站",
+    "en": "Visit site",
+    "ja": "サイトを見る",
+    "ko": "사이트 보기",
+    "es": "Ir al sitio",
+    "de": "Zur Website",
+    "it": "Vai al sito"
+  }
+}

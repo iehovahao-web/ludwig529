@@ -4,7 +4,7 @@
   const API_ORIGIN = 'https://abacus.jasoncameron.dev';
   const NAMESPACE = 'iehovahao-web.github.io-kansai';
   const PRODUCTION_HOST = 'iehovahao-web.github.io';
-  const PRODUCTION_PATH = /^\/kansai(?:\/|$)/;
+  const PRODUCTION_PATH = /^\/ludwig529(?:\/|$)/i;
   const REQUEST_TIMEOUT_MS = 4500;
   const DETAIL_SESSION_PREFIX = 'kansai-global-detail-session-v1:';
   const TOTAL_CACHE_KEY = 'kansai-global-metrics-cache-v1';
@@ -15,29 +15,19 @@
   });
   const LANGUAGE_CODES = new Set(['zh', 'en', 'ja', 'ko', 'es', 'de', 'fr', 'it', 'ar', 'th']);
   const SEASONAL_AUDIO_THEMES = new Set(['halloween', 'christmas']);
-  const SECTION_TARGETS = ['food', 'sea', 'shopping', 'coupon', 'addresses', 'seasonal-guides'];
+  const SECTION_TARGETS = ['food', 'sea', 'shopping', 'time-weather', 'seasonal-guides'];
   const DETAIL_KEYS = new Set([
     ...SECTION_TARGETS.flatMap(section => [`section-link-${section}`, `module-${section}-view`]),
     'navigation-brand-top',
     'navigation-header-food', 'navigation-header-sea', 'navigation-header-shopping', 'navigation-header-coupon',
     'navigation-hero-food', 'navigation-hero-addresses',
     'navigation-footer-addresses', 'navigation-footer-top', 'navigation-mobile-addresses',
-    'review-platform-kkday', 'review-platform-klook', 'review-platform-trip-com',
-    ...['kagonoya', 'aburiya', 'daiko-sushi'].flatMap(venue =>
-      ['map', 'site', 'image', 'copy'].map(action => `food-${venue}-${action}`)),
-    ...['map', 'site', 'media', 'copy'].map(action => `sea-suma-aquarium-${action}`),
-    'shopping-ora2-image', 'shopping-rishiri-image', 'shopping-kyushin-image',
-    'coupon-download', 'coupon-download-main', 'coupon-download-dialog', 'coupon-download-mobile',
-    'coupon-preview', 'coupon-tsuruha-locator',
-    ...['kagonoya', 'aburiya', 'daiko-sushi', 'suma-aquarium'].flatMap(venue =>
-      ['map', 'site', 'copy'].map(action => `addresses-${venue}-${action}`)),
-    'addresses-tsuruha-locator',
     ...Array.from({ length: 12 }, (_, index) => `audio-osaka-track-${String(index + 1).padStart(2, '0')}`),
     ...Array.from({ length: 12 }, (_, index) => `audio-osaka-track-select-${String(index + 1).padStart(2, '0')}`),
-    'audio-delicious-in-progress', 'video-jazz-impression', 'video-yodogawa-light-never-sleeps',
+    'audio-delicious-in-progress', 'video-yodogawa-light-never-sleeps',
     'control-osaka-previous', 'control-osaka-play-toggle', 'control-osaka-next', 'control-osaka-airplay',
     'control-delicious-rewind', 'control-delicious-play-toggle', 'control-delicious-forward', 'control-delicious-airplay',
-    'control-video-jazz-play', 'control-video-yodogawa-play',
+    'control-video-yodogawa-play',
     ...[...LANGUAGE_CODES].map(language => `language-${language}`),
     ...[...SEASONAL_AUDIO_THEMES].flatMap(theme => [`seasonal-audio-${theme}-on`, `seasonal-audio-${theme}-off`]),
     'season-guide-sakura-click', 'season-guide-autumn-click', 'season-guide-fireworks-click'
@@ -205,9 +195,6 @@
   function reviewPlatformDetail(link) {
     if (!link.closest('.review-platform-links')) return '';
     const raw = link.getAttribute('href') || '';
-    if (/\/\/(?:[^/]+\.)?kkday\.com\//.test(raw)) return 'review-platform-kkday';
-    if (/\/\/(?:[^/]+\.)?klook\.com\//.test(raw)) return 'review-platform-klook';
-    if (/\/\/(?:[^/]+\.)?trip\.com\//.test(raw)) return 'review-platform-trip-com';
     return '';
   }
   function couponDownloadSource(link) {

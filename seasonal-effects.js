@@ -1,8 +1,23 @@
 (() => {
   'use strict';
+  /* Ported from the Kansai site (iehovahao-web/kansai main, 2026-10-24) for the Ludwig Cheung site.
+     Changes: official data only (no calculated years), seven-language captions in the intro band,
+     effects clipped below the banner, motion toggle, shared holiday loader (js/holiday-data.js). */
 
   const TIME_ZONE = 'Asia/Tokyo';
   const ASSET_ROOT = 'assets/seasonal/';
+  // Each illustration sits in the caption box background, fitted to how it is drawn:
+  //   panorama - edge-to-edge landscapes: fill the box (cover), cropped at the given focus point
+  //   garland / feature - a garland or a composed group on transparency: shown whole on the right
+  const SCENE_LAYOUT = {
+    autumnal: ['panorama', '50% 62%'], emperor: ['panorama', '50% 58%'], foundation: ['panorama', '50% 52%'],
+    greenery: ['panorama', '50% 72%'], marine: ['panorama', '50% 62%'], mountain: ['panorama', '50% 56%'],
+    showa: ['panorama', '50% 60%'],
+    citizens: ['garland', '50% 50%'], vernal: ['garland', '50% 50%'],
+    constitution: ['feature', '50% 50%'], culture: ['feature', '50% 50%'], comingage: ['feature', '50% 50%'],
+    respect: ['feature', '50% 50%'], sports: ['feature', '50% 50%'], substitute: ['feature', '50% 50%'],
+    labor: ['feature', '50% 50%'], children: ['feature', '50% 50%']
+  };
   const HOLIDAY_DATA_URL = 'assets/data/japan-holidays-official.json';
   const LEAF_ASSETS = [
     'openclipart-autumn-leaf-1.png',
@@ -73,6 +88,10 @@
   let officialHolidayCalendar = null;
   let officialHolidayLoadState = 'pending';
   const LIGHT_LABELS = {
+    ko: ['핼러윈 제목 조명 켜기', '핼러윈 제목 조명 끄기'],
+    es: ['Encender las luces del título de Halloween', 'Apagar las luces del título de Halloween'],
+    de: ['Halloween-Titellichter einschalten', 'Halloween-Titellichter ausschalten'],
+    it: ['Accendi le luci del titolo di Halloween', 'Spegni le luci del titolo di Halloween'],
     zh: ['开启万圣节标题彩灯', '关闭万圣节标题彩灯'],
     'zh-hant': ['開啟萬聖節標題彩燈', '關閉萬聖節標題彩燈'],
     ja: ['ハロウィン見出しのライトを点ける', 'ハロウィン見出しのライトを消す'],
@@ -114,6 +133,8 @@
   }
 
   function holidayForParts(parts) {
+    // Personal site rule: only years the Cabinet Office has published; never a calculated year.
+    if (!officialHolidayCalendar || !officialHolidayCalendar.years.has(parts.year)) return null;
     const record = holidayEngine?.resolve(parts, officialHolidayCalendar);
     if (!record || record.id === 'newyear' || !HOLIDAY_DETAILS[record.id]) return null;
     const displayDate = record.date.replaceAll('-', '.');
@@ -158,7 +179,7 @@
     const requested = (new URLSearchParams(location.search).get('holiday') || 'marine').toLowerCase();
     const aliases = { adult: 'comingage', coming: 'comingage', emperorbirthday: 'emperor', spring: 'vernal', autumn: 'autumnal', green: 'greenery', child: 'children', sea: 'marine', aged: 'respect', labour: 'labor', bridge: 'citizens' };
     const id = aliases[requested] || requested;
-    return HOLIDAY_DETAILS[id] ? { id, date: 'LOCAL QA', ...HOLIDAY_DETAILS[id] } : { id: 'marine', date: 'LOCAL QA', ...HOLIDAY_DETAILS.marine };
+    return HOLIDAY_DETAILS[id] ? { id, date: id === 'labor' ? '2026.11.23 · PREVIEW' : 'LOCAL QA', ...HOLIDAY_DETAILS[id] } : { id: 'marine', date: 'LOCAL QA', ...HOLIDAY_DETAILS.marine };
   }
 
   function currentTheme() {
@@ -178,15 +199,33 @@
     button.setAttribute('aria-label', labels[button.getAttribute('aria-pressed') === 'true' ? 1 : 0]);
   }
 
+  const lcLang = () => document.querySelector('#language-select')?.value || 'en';
+  const lcPick = obj => obj ? (obj[lcLang()] || obj.en) : null;
+  const lcHtmlLang = { zh: 'zh-Hant', en: 'en', ja: 'ja', ko: 'ko', es: 'es', de: 'de', it: 'it' };
+  let lastCaption = null;
+
   function addCaption(theme, suppliedCopy) {
+    document.querySelector('.seasonal-holiday-note')?.remove();
+    lastCaption = [theme, suppliedCopy];
+    const C = window.LC_SEASONAL_COPY || { items: {}, kind: {} };
     const copy = suppliedCopy || LABELS[theme];
+    const key = copy.id || theme;
+    const local = lcPick(C.items[key]) || [copy.title, copy.en];
+    const lang = lcLang();
     const caption = document.createElement('aside');
-    caption.className = `seasonal-holiday-note seasonal-caption-${theme}${copy.id ? ` holiday-${copy.id} holiday-family-${copy.family}` : ''}`;
+    caption.className = `seasonal-holiday-note lc-in-flow seasonal-caption-${theme}${copy.id ? ` holiday-${copy.id} holiday-family-${copy.family}` : ''}`;
     caption.setAttribute('role', 'note');
+    if (theme === 'japanholiday' && copy.id) {
+      const [layout, pos] = SCENE_LAYOUT[copy.id] || ['feature', '50% 50%'];
+      caption.classList.add('lc-has-art', `lc-art-${layout}`);
+      // absolute URL: a relative url() inside a custom property would resolve against the stylesheet folder
+      caption.style.setProperty('--lc-art', `url("${new URL(`${ASSET_ROOT}holiday-${copy.id}-v1.webp`, document.baseURI).href}")`);
+      caption.style.setProperty('--lc-art-pos', pos);
+    }
 
     const date = document.createElement('span');
     date.className = 'seasonal-label-date';
-    date.textContent = copy.when || `${copy.date} · ${copy.status || '日本の国民の祝日'}`;
+    date.textContent = copy.id ? `${copy.date} · ${lcPick(C.kind[copy.status ? 'statutory' : 'national'])}` : copy.when;
     caption.append(date);
 
     const title = document.createElement('strong');
@@ -231,28 +270,29 @@
 
     const names = document.createElement('span');
     names.className = 'seasonal-label-names';
-    const ja = document.createElement('i');
-    ja.lang = 'ja';
-    ja.textContent = copy.ja;
-    const zh = document.createElement('i');
-    zh.lang = 'zh-Hant';
-    zh.textContent = copy.zh;
-    names.append(ja, zh);
-
-    const en = document.createElement('span');
-    en.className = 'seasonal-label-hint';
-    en.lang = 'en';
-    en.textContent = copy.en;
-    const hintJa = document.createElement('span');
-    hintJa.className = 'seasonal-label-hint seasonal-label-hint-secondary';
-    hintJa.lang = 'ja';
-    hintJa.textContent = copy.hintJa;
-    const hintZh = document.createElement('span');
-    hintZh.className = 'seasonal-label-hint seasonal-label-hint-secondary';
-    hintZh.lang = 'zh-Hant';
-    hintZh.textContent = copy.hintZh;
-    caption.append(title, names, en, hintJa, hintZh);
-    document.body.append(caption);
+    const own = document.createElement('i');
+    own.lang = lcHtmlLang[lang] || 'en';
+    own.textContent = local[0];
+    names.append(own);
+    if (lang !== 'ja') {
+      const ja = document.createElement('i');
+      ja.lang = 'ja';
+      ja.textContent = copy.officialName || copy.ja;
+      names.append(ja);
+    }
+    const hint = document.createElement('span');
+    hint.className = 'seasonal-label-hint';
+    hint.lang = own.lang;
+    hint.textContent = local[1];
+    caption.append(title, names, hint);
+    if (!copy.id && theme !== 'newyear' && theme !== 'obon') {
+      const kind = document.createElement('span');
+      kind.className = 'seasonal-label-hint seasonal-label-hint-secondary lc-kind';
+      kind.textContent = lcPick(C.kind.festival);
+      caption.append(kind);
+    }
+    const slot = document.getElementById('theme-badge');
+    if (slot) { slot.hidden = false; slot.append(caption); } else document.body.append(caption);
   }
 
   function addBats(layer, compact) {
@@ -430,13 +470,58 @@
     layer.append(flight);
   }
 
+  // Page-wide weather for national holidays, chosen by season (personal site addition, Kansai assets):
+  //   Dec-Feb snow (Kansai snowflake) - Mar-Apr cherry petals - May fresh green leaves -
+  //   Sep-Nov autumn leaves (Kansai leaf art) - Mountain Day mist. Marine Day keeps the Kansai bubbles.
+  function holidayWeather(holiday) {
+    if (holiday.id === 'mountain') return 'mist';
+    if (holiday.id === 'marine') return null;
+    const m = Number(String(holiday.date || '').slice(5, 7)) || osakaDateParts().month;
+    if (m === 12 || m <= 2) return 'snow';
+    if (m <= 4) return 'petal';
+    if (m === 5) return 'green';
+    if (m >= 9) return 'leaf';
+    return null;
+  }
+  function addHolidayWeather(layer, compact, holiday) {
+    const kind = holidayWeather(holiday);
+    if (!kind) return;
+    const field = accent(`lc-weather lc-weather-${kind}`);
+    if (kind === 'mist') {
+      for (let index = 0; index < 4; index += 1) {
+        const band = document.createElement('i');
+        band.style.setProperty('--y', `${18 + index * 20}vh`);
+        band.style.setProperty('--delay', `${-(index * 6)}s`);
+        band.style.setProperty('--duration', `${26 + index * 5}s`);
+        field.append(band);
+      }
+      layer.append(field);
+      return;
+    }
+    const count = kind === 'snow' ? (compact ? 34 : 80) : (compact ? 16 : 36);
+    for (let index = 0; index < count; index += 1) {
+      let piece;
+      if (kind === 'snow') piece = image('lc-fall lc-fall-snow', 'openclipart-snowflake.svg');
+      else if (kind === 'leaf') piece = image('lc-fall lc-fall-leaf', LEAF_ASSETS[index % LEAF_ASSETS.length]);
+      else { piece = document.createElement('i'); piece.className = `lc-fall lc-fall-${kind}`; }
+      const dir = index % 2 ? -1 : 1;
+      piece.style.setProperty('--x', `${(index * 37 + 7) % 100}vw`);
+      piece.style.setProperty('--delay', `${-((index * 1.93) % 18).toFixed(2)}s`);
+      piece.style.setProperty('--duration', `${(kind === 'snow' ? 12 : 14) + (index % 6) * 1.7}s`);
+      piece.style.setProperty('--scale', `${(0.6 + (index % 5) * 0.14).toFixed(2)}`);
+      piece.style.setProperty('--sway', `${dir * (24 + (index % 4) * 14)}px`);
+      piece.style.setProperty('--spin', `${dir * (180 + (index % 3) * 120)}deg`);
+      field.append(piece);
+    }
+    layer.append(field);
+  }
+
   function addJapanHoliday(layer, compact, holiday) {
     layer.classList.add(`holiday-${holiday.id}`, `holiday-family-${holiday.family}`);
     layer.append(accent('seasonal-jp-edgewash'));
 
-    const stage = accent('seasonal-jp-art-stage');
-    stage.append(image(`seasonal-jp-art seasonal-jp-art-${holiday.id}`, `holiday-${holiday.id}-v1.webp`));
-    layer.append(stage);
+    // Personal site: the holiday illustration is the background of the holiday caption box (see addCaption).
+    addHolidayWeather(layer, compact, holiday);
 
     const motion = accent('seasonal-jp-motion');
     const motionCount = compact ? 5 : 10;
@@ -541,6 +626,8 @@
     document.querySelector('.seasonal-layer')?.remove();
     document.querySelector('.seasonal-holiday-note')?.remove();
     document.querySelector('.seasonal-thanksgiving-footer-decor')?.remove();
+    const slot = document.getElementById('theme-badge');
+    if (slot) slot.hidden = true;
     let holiday = null;
     if (theme === 'japanholiday') holiday = previewHoliday() || holidayForParts(osakaDateParts());
     if (theme === 'japanholiday' && !holiday) theme = null;
@@ -564,6 +651,7 @@
     if (theme === 'japanholiday') addJapanHoliday(layer, compact, holiday);
     if (theme === 'obon') addObon(layer, compact);
     document.body.append(layer);
+    clipBelowBanner();
     addCaption(theme, theme === 'newyear' ? newYearCaptionForParts(osakaDateParts()) : holiday);
     document.dispatchEvent(new CustomEvent('kansai-season-change', { detail: { theme } }));
   }
@@ -579,35 +667,111 @@
     renderedDate = today;
     render(theme);
   }
-  async function loadOfficialHolidayCalendar() {
-    if (!holidayEngine?.createOfficialCalendar || typeof fetch !== 'function') {
-      officialHolidayLoadState = 'fallback';
-      document.documentElement.dataset.holidayCalendar = 'fallback';
-      return;
-    }
+  function useOfficialData(d) {
     try {
-      const response = await fetch(HOLIDAY_DATA_URL, { cache: 'no-cache', credentials: 'same-origin' });
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      officialHolidayCalendar = holidayEngine.createOfficialCalendar(await response.json());
-      officialHolidayLoadState = 'official';
-      document.documentElement.dataset.holidayCalendar = 'official';
-      renderedDate = null;
-      sync();
-      document.dispatchEvent(new CustomEvent('kansai-holiday-calendar-ready', {
-        detail: { source: 'cabinet-office-csv', years: [...officialHolidayCalendar.years] }
-      }));
+      officialHolidayCalendar = d && d.official ? holidayEngine.createOfficialCalendar(d.official) : null;
+      officialHolidayLoadState = officialHolidayCalendar ? 'official' : 'unavailable';
     } catch (error) {
-      officialHolidayLoadState = 'fallback';
-      document.documentElement.dataset.holidayCalendar = 'fallback';
-      console.warn('Official Japanese holiday calendar unavailable; using the calculated future fallback.', error);
+      officialHolidayCalendar = null; officialHolidayLoadState = 'unavailable';
     }
+    document.documentElement.dataset.holidayCalendar = officialHolidayLoadState;
+    renderedDate = null;
+    sync();
   }
+  window.addEventListener('lc:holidays', event => useOfficialData(event.detail));
+  if (window.LC_holidayData !== undefined) useOfficialData(window.LC_holidayData);
+
+  // Keep every decoration below the banner: the banner text and name are never covered.
+  // Personal site: the effect layer is cut out (clip-path with holes) around the poster, the header and the key
+  // content - name, main buttons, tagline, holiday caption and the control dock - so nothing drawn by the effects,
+  // moving particles included, ever lies on top of them. On phones the layer also stays below the poster.
+  // Also every link, button and menu on screen (cards, platform links, language buttons in the footer, counters):
+  // decorations pass behind them instead of being drawn on top.
+  // Every readable thing on screen: headings, paragraphs, labels, the avatar, cards, controls, the footer.
+  // Effects keep playing in the gaps between them (and over the plain navy ground).
+  const HOLE_TARGETS = '.site-nav,.profile-avatar,.glass-player,.intro h1,.hero-split .tagline,.seasonal-holiday-note.lc-in-flow,.lc-dock>*,' +
+    'h1,h2,h3,p,li,.label,.avatar,.bio-panel,.bio-src,.facts,.sec-head,' +
+    'main a,main button,main select,footer a,footer button,.stat,.clock,.date-line,.week,.day-tags,.data-line,.foot-bar,.ask';  // I1: whole Q&A box
+  function mergeRects(list) {
+    const out = list.map(r => ({ l: r.l, t: r.t, r: r.r, b: r.b }));
+    for (let changed = true; changed;) {
+      changed = false;
+      for (let a = 0; a < out.length && !changed; a++) for (let b = a + 1; b < out.length; b++) {
+        const A = out[a], B = out[b];
+        if (A.l < B.r && B.l < A.r && A.t < B.b && B.t < A.b) {
+          out[a] = { l: Math.min(A.l, B.l), t: Math.min(A.t, B.t), r: Math.max(A.r, B.r), b: Math.max(A.b, B.b) };
+          out.splice(b, 1); changed = true; break;
+        }
+      }
+    }
+    return out;
+  }
+  function shift(path, dx, dy) {
+    return path.replace(/M(-?[\d.]+) (-?[\d.]+)H(-?[\d.]+)V(-?[\d.]+)H(-?[\d.]+)Z/g, (m, x1, y1, x2, y2, x3) =>
+      `M${+x1 + dx} ${+y1 + dy}H${+x2 + dx}V${+y2 + dy}H${+x3 + dx}Z`);
+  }
+  function clipBelowBanner() {
+    // the Thanksgiving footer decoration lives outside the layer (position: fixed) and gets the same cut-out
+    const layers = [...document.querySelectorAll('.seasonal-layer,.seasonal-thanksgiving-footer-decor')];
+    if (!layers.length) return;
+    const W = innerWidth, H = innerHeight, PAD = 6;
+    let top = 0; const holes = [];
+    const hero = document.querySelector('.hero-art');
+    if (hero) {
+      const r = hero.getBoundingClientRect();
+      if (r.bottom > 0 && r.top < H) {
+        if (r.left > 1) holes.push({ l: r.left, t: r.top, r: r.right, b: r.bottom });  // poster beside the intro (desktop)
+        else top = Math.max(0, Math.round(r.bottom));                                  // poster on top (phone)
+      }
+    }
+    document.querySelectorAll(HOLE_TARGETS).forEach(e => {
+      const r = e.getBoundingClientRect();
+      if (r.width && r.height && r.bottom > top && r.top < H) holes.push({ l: r.left - PAD, t: r.top - PAD, r: r.right + PAD, b: r.bottom + PAD });
+    });
+    let d = `M0 ${top}H${W}V${H}H0Z`;
+    mergeRects(holes).forEach(h => {
+      const l = Math.max(0, Math.round(h.l)), t = Math.max(top, Math.round(h.t)), r = Math.min(W, Math.round(h.r)), b = Math.min(H, Math.round(h.b));
+      if (r > l && b > t) d += `M${l} ${t}H${r}V${b}H${l}Z`;
+    });
+    layers.forEach(layer => {
+      // clip-path coordinates are relative to the element's own box; a fixed element not at the top-left needs an offset
+      const b = layer.getBoundingClientRect();
+      layer.style.clipPath = b.left || b.top ? `path(evenodd, "${shift(d, -b.left, -b.top)}")` : `path(evenodd, "${d}")`;
+    });
+  }
+  // Personal site: decorations pinned to the bottom of the screen (monster parade, gifts, kadomatsu, Obon
+  // procession...) step aside while they would sit on the name, the main buttons, the tagline or the holiday
+  // caption, and come back as soon as those have scrolled away. The decorations themselves are unchanged.
+  const BOTTOM_DECOR = '.seasonal-monster-parade,.seasonal-winter-trees,.seasonal-gift-row,.seasonal-christmas-snowbank,' +
+    '.seasonal-kadomatsu,.seasonal-kadomatsu-right,.seasonal-newyear-lanterns,.seasonal-newyear-gifts,' +
+    '.seasonal-thanksgiving-footer-decor,.seasonal-obon-procession,.seasonal-obon-riverlight,' +
+    '.seasonal-pumpkin-corners img,.seasonal-settled-leaves';
+  const KEY_CONTENT = '.intro h1,.hero-split .cta .btn,.hero-split .tagline,.seasonal-holiday-note.lc-in-flow,h2,h3,.avatar,.bio-panel,footer .lang-switch,.foot-bar,.ask';  // I1: + Q&A box
+  function yieldToContent() {
+    const decor = [...document.querySelectorAll(BOTTOM_DECOR)].map(e => e.getBoundingClientRect()).filter(r => r.width && r.height);
+    const key = [...document.querySelectorAll(KEY_CONTENT)].map(e => e.getBoundingClientRect()).filter(r => r.width && r.bottom > 0 && r.top < innerHeight);
+    // vertical bands only: several decorations travel sideways, so any shared height counts as an overlap
+    const hit = decor.some(d => key.some(k => !(k.bottom <= d.top || k.top >= d.bottom)));
+    document.documentElement.classList.toggle('lc-decor-yield', hit);
+  }
+  let decorFrame = 0;
+  function onViewChange() { if (!decorFrame) decorFrame = requestAnimationFrame(() => { decorFrame = 0; clipBelowBanner(); yieldToContent(); }); }
+  window.addEventListener('scroll', onViewChange, { passive: true });
+  window.addEventListener('resize', onViewChange);
+  document.addEventListener('kansai-season-change', () => { setTimeout(onViewChange, 60); setTimeout(onViewChange, 700); });
+  window.addEventListener('load', onViewChange);
+  window.addEventListener('lc:dock-moved', onViewChange);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(onViewChange);
+  document.addEventListener('guide-language-change', () => setTimeout(onViewChange, 60));
+  if ('ResizeObserver' in window) new ResizeObserver(onViewChange).observe(document.documentElement);
+  document.addEventListener('guide-language-change', () => { if (lastCaption && renderedTheme) addCaption(lastCaption[0], lastCaption[1]); });
+
   let midnightTimer;
   function scheduleNextOsakaMidnight() {
     clearTimeout(midnightTimer);
     const parts = osakaDateParts();
-    const next = Date.UTC(parts.year, parts.month - 1, parts.day, 15, 0, 3);
-    midnightTimer = setTimeout(() => { sync(); scheduleNextOsakaMidnight(); }, Math.max(1000, next - Date.now()));
+    const next = Date.UTC(parts.year, parts.month - 1, parts.day, 15, 0, 0);
+    midnightTimer = setTimeout(() => { sync(); scheduleNextOsakaMidnight(); }, Math.max(0, next - Date.now()));
   }
   function updateMediaFocus() {
     const layer = document.querySelector('.seasonal-layer');
@@ -659,7 +823,6 @@
   window.addEventListener('pageshow', () => { sync(); scheduleNextOsakaMidnight(); });
   sync();
   scheduleNextOsakaMidnight();
-  void loadOfficialHolidayCalendar();
   window.KansaiSeasonal = Object.freeze({
     resolve: date => automaticTheme(osakaDateParts(date)),
     holiday: date => holidayForParts(osakaDateParts(date)),

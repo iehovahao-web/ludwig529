@@ -49,6 +49,7 @@ function loadTrack(index,shouldPlay=false){
  get('back').disabled=index===0;get('forward').disabled=index===tracks.length-1;
  if(shouldPlay)playCurrent();
 }
+document.addEventListener('osaka-select-track',event=>{loadTrack(event.detail.album?0:event.detail.index,true)});
 document.addEventListener('guide-language-change',()=>{if(hasStarted)showTrackCover()});
 picker.addEventListener('change',()=>loadTrack(Number(picker.value),!audio.paused&&!audio.ended));
 get('back').addEventListener('click',()=>loadTrack(trackIndex-1,!audio.paused&&!audio.ended));

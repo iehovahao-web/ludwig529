@@ -5,10 +5,11 @@ import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { createRequire } from 'node:module';
 
 const require = createRequire(import.meta.url);
-const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const engine = require(path.join(root, 'japan-holidays.js'));
 const officialPath = path.join(root, 'assets/data/japan-holidays-official.json');
 const fixturePath = path.join(root, 'tests/fixtures/syukujitsu-2026-2027.csv');
@@ -85,7 +86,7 @@ try {
   const fixtureGenerated = JSON.parse(fs.readFileSync(generatedPath, 'utf8'));
   assert.deepEqual(
     fixtureGenerated.holidays,
-    officialData.holidays.filter(item => Number(item.date.slice(0, 4)) <= 2027),
+    officialData.holidays.filter(item => Number(item.date.slice(0, 4)) >= 2026 && Number(item.date.slice(0, 4)) <= 2027),
     'Shift_JIS fixture generation must reproduce the official 2026/2027 rows'
   );
   const before = fs.readFileSync(generatedPath);

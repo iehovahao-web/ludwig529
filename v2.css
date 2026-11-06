@@ -1,0 +1,125 @@
+.profile-intro{display:flex;align-items:center;gap:26px;margin:20px 0 28px}.profile-avatar{width:150px;height:150px;object-fit:contain;border-radius:50%;border:3px solid #000;box-shadow:5px 5px 0 #f4b81c}.profile-intro #page-title{font-size:clamp(30px,3.2vw,48px);margin:0;padding:0}
+.my-bio h2{font:800 13px/1.5 ui-monospace,monospace;letter-spacing:.15em;color:#f4b81c;margin-bottom:14px}.my-bio .bio-name{font-size:27px;font-weight:900;color:white;margin-bottom:14px}.my-bio p{margin:8px 0}.my-bio .review-platform-links{margin-top:20px}.my-bio .review-platform-links a:nth-child(1){background:#e3261c}.my-bio .review-platform-links a:nth-child(2){background:#f4b81c;color:#071a33}.my-bio .review-platform-links a:nth-child(3){background:#2457f5}
+.cover-pending{aspect-ratio:1;display:grid;place-items:center;box-shadow:8px 8px 0 #2457f5;border:2px dashed #426187;background:#0d2748;text-align:center}.cover-pending span{display:block;font:900 clamp(48px,7vw,90px)/1.1 sans-serif;letter-spacing:-.04em;color:#2457f5}.cover-pending strong{display:block;margin-top:20px;font-size:18px;color:#b9cae1}.cover-pending p{font-size:12px}
+.media-gallery.osaka-music-feature{display:block;max-width:310px;width:100%;padding:0;margin:0 auto 36px}.osaka-music-feature .album-inner{width:100%}.osaka-music-feature .album-section{padding:0}.track-cover-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;margin:32px 0 60px}.track-cover-option{padding:0 0 16px;text-align:start;color:#fff;background:#0d2748;border:2px solid #000;box-shadow:4px 4px 0 #000;font:inherit;min-width:0}.track-cover-option img{width:100%;height:auto;aspect-ratio:1;object-fit:contain}.track-cover-option b{display:block;margin:12px 14px 6px;color:#f4b81c;font-family:ui-monospace,monospace}.track-cover-option span{display:block;margin:0 14px;font-size:12px;line-height:1.6;overflow-wrap:anywhere}.track-cover-option:hover{outline:2px solid #f4b81c;outline-offset:3px}.time-weather{padding-block:60px}.time-weather-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.osaka-clock,#osaka-weather{padding:30px;background:#0d2748;border:2px solid #000}.osaka-clock>span{font:12px ui-monospace,monospace;color:#f4b81c}.osaka-clock time{display:block;font:700 clamp(30px,4vw,56px)/1.5 ui-monospace,monospace;font-variant-numeric:tabular-nums;white-space:nowrap}.osaka-clock p{color:#becde2;font-size:13px}.anna-videos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.anna-videos>p{grid-column:1/-1;padding:24px;background:#0d2748;color:#bfcee1}
+@media(max-width:760px){.track-cover-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.time-weather-grid{grid-template-columns:1fr}.profile-avatar{width:116px;height:116px}.profile-intro{gap:20px}.profile-intro #page-title{font-size:32px!important}.anna-videos{grid-template-columns:1fr}.osaka-clock,#osaka-weather{padding:22px}}
+
+.track-cover-option span{margin-top:12px}.track-cover-option[aria-current]{outline:2px solid #f4b81c}
+
+/* Full-screen opening; separate reserved banner area. */
+.hero .hero-inner{max-width:none;width:100%;display:flex;flex-direction:column;gap:0;padding:0}
+.hero .hero-art{order:0;position:relative;width:100%;height:calc(100svh - 80px);min-height:420px;margin:0;padding:0;border:0;box-shadow:none;background:#071a33;overflow:hidden}
+.hero .hero-art:before{content:"";display:block;position:absolute;inset:-28px;background:url("assets/japan-hero-3000.png") center/cover no-repeat;filter:blur(24px) brightness(.35);z-index:0}
+.hero .hero-art img{position:relative;z-index:1;width:100%;height:100%;max-width:none;object-fit:contain;box-shadow:none}
+.hero-banner-slot{order:1;flex:none;width:100%;height:120px;background:#071a33;border-block:1px solid #294369}
+.hero .hero-copy{order:2;width:min(1160px,calc(100% - 80px));margin:0 auto;padding:48px 0}
+@media(max-width:680px){.hero .hero-art{height:calc(100svh - 96px);min-height:360px}.hero-banner-slot{height:80px}.hero .hero-copy{width:calc(100% - 40px);padding:32px 0}}
+
+/* Personal-site pattern: header inside a reserved top strip; full-bleed first screen. */
+:root{--hero-banner-height:100px}
+.site-nav{height:var(--hero-banner-height);margin-bottom:calc(-1 * var(--hero-banner-height));background:#071a33f5;backdrop-filter:blur(16px);border-bottom:1px solid #ffffff20}
+.site-nav .nav-inner{height:100%;min-height:0;max-width:none;width:calc(100% - 48px)}
+.hero-scroll-stage{order:0;width:100%;height:165svh;position:relative;background:#071a33}
+.hero .hero-scroll-stage .hero-art{position:sticky;top:0;height:100svh;min-height:0;padding-top:var(--hero-banner-height);overflow:hidden;transform:scale(var(--hero-scale,1));transform-origin:50% 50%;border-radius:var(--hero-radius,0px);will-change:transform}
+.hero .hero-scroll-stage .hero-art::before{display:none}
+.hero .hero-scroll-stage .hero-art img{width:100%;height:100%;object-fit:cover;object-position:50% 38%;max-width:none}
+.hero .hero-copy{padding-top:24px}
+@media(max-width:760px){:root{--hero-banner-height:122px}.site-nav .nav-inner{width:calc(100% - 32px)}.hero .hero-scroll-stage .hero-art img{object-position:50% 35%}}
+@media(prefers-reduced-motion:reduce){.hero-scroll-stage{height:100svh}.hero .hero-scroll-stage .hero-art{transform:none!important;border-radius:0!important;will-change:auto}}
+.hero{overflow:visible}
+.hero .hero-scroll-stage .hero-art img{object-position:50% 0}
+/* Navigation overlays the artwork; top fade protects its legibility. */
+.site-nav{background:linear-gradient(180deg,rgba(3,12,27,.94) 0%,rgba(3,12,27,.74) 48%,rgba(3,12,27,0) 100%);backdrop-filter:none;border:0;box-shadow:none}
+.site-nav .brand,.site-nav .nav-links a{color:#fff;text-shadow:0 2px 8px #000,0 1px 3px #000}
+.site-nav .language-switch select{background:#071a337d;border-color:#ffffff50}
+.hero .hero-scroll-stage .hero-art{padding-top:0}
+.hero .hero-scroll-stage .hero-art img{object-position:50% 22%}
+/* Frosted navigation panel over the full-screen cover. */
+.site-nav{background:rgba(5,19,39,.66);-webkit-backdrop-filter:blur(20px) saturate(125%);backdrop-filter:blur(20px) saturate(125%);border-bottom:1px solid rgba(255,255,255,.18);box-shadow:0 8px 32px rgba(0,0,0,.16)}
+.site-nav .nav-links a{font-weight:700;color:#fff;text-shadow:0 1px 3px #0008}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.site-nav{background:rgba(5,19,39,.9)}}
+/* Raised glass navigation buttons, with readable seven-language labels. */
+:root{--hero-banner-height:132px}
+.site-nav .nav-inner{padding-block:14px;gap:16px;flex-wrap:wrap}
+.site-nav .brand strong{font-size:26px;letter-spacing:0;font-style:normal}
+.site-nav .brand span{font-size:14px;letter-spacing:.12em}
+.site-nav .language-switch select{font-size:16px;min-height:44px;border-radius:12px;background:linear-gradient(180deg,#ffffff20,#ffffff09);box-shadow:inset 0 1px 0 #ffffff35,0 4px 10px #0004}
+.site-nav .nav-links{display:flex;gap:12px;align-items:stretch;justify-content:flex-end;flex-wrap:wrap;min-width:0}
+.site-nav .nav-links a{display:flex;align-items:center;justify-content:center;min-height:48px;padding:10px 18px;font-size:18px;line-height:1.35;font-weight:750;text-align:center;text-decoration:none;color:#fff;border:1px solid #ffffff42;border-bottom-color:#ffffff18;border-radius:12px;background:linear-gradient(155deg,rgba(255,255,255,.21),rgba(255,255,255,.055));box-shadow:inset 0 1px 0 #ffffff55,inset 0 -2px 0 #0003,0 4px 0 #020b1bc0,0 8px 18px #0005;transition:transform .18s,box-shadow .18s,background .18s;white-space:normal}
+.site-nav .nav-links a:hover{transform:translateY(-2px);background:linear-gradient(155deg,#ffffff39,#ffffff15);box-shadow:inset 0 1px 0 #ffffff70,0 6px 0 #020b1bc0,0 12px 22px #0006}
+.site-nav .nav-links a:active{transform:translateY(3px);box-shadow:inset 0 2px 5px #0005,0 1px 0 #020b1bc0,0 3px 8px #0004}
+.site-nav .nav-links a:focus-visible{outline:3px solid #f4b81c;outline-offset:4px}
+@media(max-width:1100px){:root{--hero-banner-height:164px}.site-nav .nav-links{width:100%;justify-content:space-between}.site-nav .nav-links a{flex:1;padding:10px 12px}}
+@media(max-width:600px){:root{--hero-banner-height:218px}.site-nav .nav-inner{gap:12px;padding-block:12px}.site-nav .brand strong{font-size:23px}.site-nav .brand span{font-size:12px}.site-nav .nav-links{display:grid;grid-template-columns:1fr 1fr;gap:10px}.site-nav .nav-links a{font-size:16px;min-height:52px;padding:9px 10px}.site-nav .language-switch select{font-size:15px}}
+@media(prefers-reduced-motion:reduce){.site-nav .nav-links a{transition:none}}
+
+/* Clear artwork, dimensional buttons only; no full-width frosted panel. */
+.site-nav{background:linear-gradient(180deg,rgba(3,12,27,.66),rgba(3,12,27,.22) 68%,transparent);-webkit-backdrop-filter:none;backdrop-filter:none;border:0;box-shadow:none}
+.site-nav .nav-links a{background:linear-gradient(155deg,rgba(35,61,94,.94),rgba(7,23,46,.90));-webkit-backdrop-filter:none;backdrop-filter:none}
+.site-nav .nav-links a:hover{background:linear-gradient(155deg,#385d87,#122d50)}
+.hero-scroll-stage{height:100svh;perspective:1200px;overflow:visible;--hero-progress:0}
+.hero .hero-scroll-stage .hero-art{position:relative;top:auto;height:100svh;transform-origin:50% 45%;transform:translate3d(0,calc(var(--hero-progress)*72px),calc(var(--hero-progress)*-520px));opacity:calc(1 - var(--hero-progress)*.35);border-radius:0;will-change:auto}
+.hero-motion-active .hero-art{will-change:transform,opacity!important}
+@media(max-width:640px){.hero .hero-scroll-stage .hero-art{transform:translate3d(0,calc(var(--hero-progress)*42px),calc(var(--hero-progress)*-300px))}}
+@media(prefers-reduced-motion:reduce){.hero .hero-scroll-stage .hero-art{transform:none!important;opacity:1}}
+/* Locale-aware banner typography; keep the approved raised-button treatment. */
+.site-nav .nav-links a{white-space:nowrap;word-break:keep-all;overflow-wrap:normal;min-width:0;letter-spacing:0}
+html[lang=en] .site-nav .nav-links a,html[lang=de] .site-nav .nav-links a{font-size:clamp(13px,1.7vw,17px);padding-inline:12px}
+html[lang=es] .site-nav .nav-links a,html[lang=it] .site-nav .nav-links a{font-size:clamp(12px,1.55vw,16px);padding-inline:10px}
+html[lang=ja] .site-nav .nav-links a{font-size:clamp(14px,1.85vw,18px);padding-inline:12px}
+html[lang=ko] .site-nav .nav-links a{font-size:clamp(13px,1.7vw,17px);padding-inline:10px}
+@media(min-width:601px) and (max-width:1100px){.site-nav .nav-links a{flex:1 1 auto}html:is([lang=es],[lang=it],[lang=ko]) .site-nav .nav-links a:first-child{flex-grow:1.6}.site-nav .nav-links{gap:10px}}
+@media(max-width:600px){
+.site-nav .nav-inner{display:grid;grid-template-columns:minmax(0,1fr) auto;align-content:center;gap:12px}
+.site-nav .brand{min-width:0;white-space:normal}.site-nav .brand strong{font-size:clamp(18px,5vw,23px);line-height:1.2;letter-spacing:-.02em}
+.site-nav .language-switch{position:static;margin:0}.site-nav .language-switch select{width:108px;max-width:100%;font-size:13px;padding-inline:8px}
+.site-nav .nav-links{grid-column:1/-1;width:100%;margin:0;grid-template-columns:1fr 1fr;gap:10px}
+html:is([lang=en],[lang=de],[lang=ko]) .site-nav .nav-links a{font-size:clamp(11px,3.35vw,15px);padding-inline:6px}
+html:is([lang=es],[lang=it]) .site-nav .nav-links a{font-size:clamp(10px,2.9vw,14px);padding-inline:5px}
+html[lang=ja] .site-nav .nav-links a{font-size:clamp(12px,3.65vw,16px);padding-inline:6px}
+}
+@media(max-width:600px){.site-nav .brand{grid-column:1;grid-row:1;order:0}.site-nav .language-switch{grid-column:2;grid-row:1;order:0;align-self:center}.site-nav .nav-links{grid-column:1/-1;grid-row:2;order:0}.site-nav .nav-inner{grid-template-rows:auto auto}}
+
+.osaka-encounter-art{margin:0 auto;max-width:680px}.osaka-encounter-art img{width:100%;height:auto;border:2px solid #000;box-shadow:6px 6px 0 #000}
+.hero .hero-copy{display:block}
+@media(max-width:600px){.site-nav .brand{max-width:none;width:auto}.site-nav .brand strong{word-break:normal;overflow-wrap:normal}}
+
+.anna-video-card{display:block;min-width:0;color:white;text-decoration:none;background:#0d2748;border:1px solid #395373;box-shadow:4px 4px 0 #000;padding-bottom:16px}.anna-video-card img{width:100%;aspect-ratio:16/9;object-fit:cover}.anna-video-card h3{font-size:15px;line-height:1.6;padding:0 16px;overflow-wrap:anywhere}.anna-video-card time{font-size:12px;color:#b8c9df;padding:0 16px}
+
+.time-weather-grid{grid-template-columns:minmax(0,1fr)}.weather-days{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}.weather-day{padding:16px 12px;background:#071a33;border:1px solid #395373;border-radius:12px;min-width:0}.weather-day time,.weather-day strong,.weather-day span{display:block}.weather-day time{font-size:13px;color:#c6d5e8}.weather-day strong{font-size:15px;margin:8px 0}.weather-day .weather-temp{font-size:18px;color:#f4b81c;white-space:nowrap}.weather-day small{font-size:11px;display:block;margin-top:8px;color:#c6d5e8}.weather-source,#weather-status{font-size:12px;color:#bdcde1}.weather-source a{text-decoration:underline}.kansai-observatory{display:block}.kansai-metrics{width:100%}@media(max-width:900px){.weather-days{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:600px){.weather-days{grid-template-columns:repeat(2,minmax(0,1fr))}#osaka-weather{padding:18px}.weather-day{padding:12px 10px}}
+
+/* iPad assistant's ten-row forecast, adapted to the site's seven locales. */
+#osaka-weather{border:1px solid #ffffff12;border-radius:20px;box-shadow:none;padding:24px;background:#0d2748}
+#weather-days{display:block;list-style:none;margin:16px 0 0;padding:4px 14px;border-radius:16px;background:#071a3359;border:1px solid #ffffff14}
+.weather-row{display:grid;grid-template-columns:5.6em 2em minmax(4.2em,7em) 3em 2.6em minmax(20px,1fr) 2.6em;align-items:center;gap:8px;min-height:48px;border-top:1px solid #ffffff14;font-variant-numeric:tabular-nums}
+.weather-row:first-child{border-top:0}.weather-row .d{display:flex;flex-direction:column;line-height:1.2}.weather-row .d b{font-size:15px;color:white}.weather-row .d span{font-size:11px;color:#ffffff99}.weather-row.sat .d b{color:#9db7ff}.weather-row.sun .d b{color:#ff8a82}.weather-row .ic{font-size:22px;text-align:center}.weather-row .tx{font-size:13px;color:#ffffffd9;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.weather-row .p{font-size:12px;color:#8fc4ff;text-align:right}.weather-row .lo{font-size:15px;color:#ffffff99;text-align:right}.weather-row .hi{font-size:15px;font-weight:700;color:white}.weather-row .bar{position:relative;height:5px;border-radius:3px;background:#ffffff1f}.weather-row .bar i{position:absolute;top:0;bottom:0;border-radius:3px;background:linear-gradient(90deg,#7fa0ff,#f4b81c,#e3261c)}
+@media(max-width:640px){#osaka-weather{padding:16px 12px}#weather-days{padding:2px 8px}.weather-row{grid-template-columns:3.5em 1.7em minmax(0,1fr) 2.6em 2em 2em;gap:5px}.weather-row .bar{display:none}.weather-row .tx{font-size:12px}.weather-row .d b{font-size:13px}.weather-row .ic{font-size:20px}.weather-row .lo,.weather-row .hi{font-size:14px}}
+
+/* Encounter Osaka: atmospheric fireworks backdrop, crisp original player above it. */
+#sea{position:relative;isolation:isolate;overflow:hidden;background:#071a33;padding-block:76px 88px;border-block:1px solid #ffffff12}
+#sea::before{content:"";position:absolute;z-index:-2;inset:-50px;background:url("assets/yodogawa-promo-v2.jpg") center 45%/cover no-repeat;filter:blur(30px) saturate(125%);opacity:.5;transform:scale(1.06);pointer-events:none}
+#sea::after{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(180deg,#071a33 0%,#071a3380 22%,#071a3366 60%,#071a33 100%);pointer-events:none}
+#sea>.wrap{position:relative}#sea .chapter-heading{margin-bottom:34px}#sea .chapter-heading h2{color:#fff;text-shadow:0 2px 15px #0007}
+#sea .encounter-video{display:block;width:min(100%,960px);max-width:960px;margin:0 auto;padding:0}
+#sea #yodogawa-light-never-sleeps{margin:0;padding:clamp(12px,2vw,24px);border:1px solid #ffffff2c;border-radius:22px;background:linear-gradient(145deg,#173451dc,#091a32ed);box-shadow:inset 0 1px 0 #ffffff24,0 28px 70px #0008,0 0 50px #d6974020;overflow:hidden}
+#sea #yodogawa-light-never-sleeps video{border-radius:12px}
+@media(max-width:600px){#sea{padding-block:48px 56px}#sea #yodogawa-light-never-sleeps{border-radius:16px;padding:10px}#sea .chapter-heading{margin-bottom:24px}}
+#sea .encounter-video>#yodogawa-light-never-sleeps{width:min(100%,430px);max-width:430px;margin-inline:auto;grid-area:auto}
+#sea .encounter-video .video-copy{padding:6px 8px 16px}#sea .encounter-video .video-caption{font-size:clamp(14px,1.7vw,18px);line-height:1.5;letter-spacing:.015em}
+
+/* A single centered maple leaf floats gently without falling or accumulating. */
+.seasonal-guide-art .seasonal-maple-leaf{display:block;width:42px;height:42px;max-width:100%;margin:auto;object-fit:contain;transform-origin:50% 65%;animation:mapleGentleSway 5.5s ease-in-out infinite;filter:drop-shadow(0 3px 4px #0003)}
+@keyframes mapleGentleSway{0%,100%{transform:translate(-2px,2px) rotate(-9deg)}50%{transform:translate(2px,-3px) rotate(7deg)}}
+@media(prefers-reduced-motion:reduce){.seasonal-guide-art .seasonal-maple-leaf{animation:none;transform:rotate(-6deg)}}
+
+.firework-scene{position:relative;display:block;width:80px;max-width:100%;height:64px;overflow:hidden}
+.firework-rocket{position:absolute;left:49%;bottom:1px;width:2px;height:14px;border-radius:50%;background:linear-gradient(0deg,transparent,#ffd798);box-shadow:0 0 5px #ffd798;animation:fireworkLaunch 5.8s linear infinite}
+.firework-bloom{position:absolute;left:50%;top:35%;width:0;height:0;animation:fireworkDrop 5.8s ease-out infinite}
+.firework-bloom i{position:absolute;left:-1px;top:-1px;width:2px;height:14px;border-radius:50%;transform-origin:50% 0;background:linear-gradient(#fff9c6,#ffc15b,transparent);box-shadow:0 0 3px #ffcb73;animation:fireworkRay 5.8s cubic-bezier(.12,.6,.35,1) infinite;--reach:25px}
+.firework-bloom i:nth-child(3n){background:linear-gradient(#fff,#9cc9ff,transparent);box-shadow:0 0 3px #94bfff;--reach:21px}
+.firework-afterglow{position:absolute;left:calc(50% - 4px);top:calc(35% - 4px);width:8px;height:8px;border-radius:50%;background:#fff5ca;filter:blur(2px);animation:fireworkCore 5.8s ease-out infinite}
+@keyframes fireworkLaunch{0%{opacity:0;transform:translateY(5px) scaleY(.5)}8%{opacity:1}25%{opacity:1;transform:translateY(-36px) scaleY(1)}29%,100%{opacity:0;transform:translateY(-39px) scaleY(.2)}}
+@keyframes fireworkRay{0%,25%{opacity:0;transform:rotate(var(--ray)) translateY(0) scaleY(.1)}29%{opacity:1}48%{opacity:.95;transform:rotate(var(--ray)) translateY(var(--reach)) scaleY(.8)}66%{opacity:.5;transform:rotate(var(--ray)) translateY(calc(var(--reach) + 5px)) scaleY(.35)}80%,100%{opacity:0;transform:rotate(var(--ray)) translateY(calc(var(--reach) + 7px)) scaleY(.05)}}
+@keyframes fireworkDrop{0%,42%{transform:translateY(0)}80%,100%{transform:translateY(12px)}}
+@keyframes fireworkCore{0%,25%{opacity:0;transform:scale(.2)}29%{opacity:1;transform:scale(1.6)}45%,100%{opacity:0;transform:scale(.3)}}
+@media(prefers-reduced-motion:reduce){.firework-rocket,.firework-afterglow{display:none}.firework-bloom,.firework-bloom i{animation:none}.firework-bloom i{opacity:.9;transform:rotate(var(--ray)) translateY(17px) scaleY(.6)}}

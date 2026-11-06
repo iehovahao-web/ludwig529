@@ -80,20 +80,12 @@
   const strings = () => copy[language] || copy.en;
   function applyCopy() {
     elements.root.querySelectorAll('[data-metric-copy]').forEach(node => { const value = strings()[node.dataset.metricCopy]; if (value) node.textContent = value; });
-    updateStatus(state); renderTotals(); updateClock();
+    updateStatus(state); renderTotals();
   }
   function updateStatus(nextState) {
     state = nextState; elements.root.dataset.counterState = nextState;
     if (elements.status) elements.status.textContent = strings()[nextState];
     if (elements.scope) elements.scope.textContent = provider.scope === 'global' ? 'SITE · GLOBAL' : 'DEVICE · LOCAL';
-  }
-  function updateClock() {
-    const now = new Date(), locale = localeByLanguage[language] || localeByLanguage.en;
-    const parts = new Intl.DateTimeFormat(locale, { timeZone: TIME_ZONE, hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23' }).formatToParts(now);
-    const part = type => parts.find(item => item.type === type)?.value || '--';
-    elements.hourMinute.textContent = `${part('hour')}:${part('minute')}`; elements.seconds.textContent = `:${part('second')}`;
-    elements.date.textContent = new Intl.DateTimeFormat(locale, { timeZone: TIME_ZONE, weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }).format(now);
-    elements.time.dateTime = now.toISOString();
   }
   function renderTotals() {
     const locale = localeByLanguage[language] || localeByLanguage.en;
@@ -151,5 +143,5 @@
   monitorMedia();
   new MutationObserver(records => records.forEach(record => record.addedNodes.forEach(node => { if (node.nodeType === Node.ELEMENT_NODE) monitorMedia(node); })))
     .observe(document.body, { childList: true, subtree: true });
-  applyCopy(); window.setInterval(updateClock, 1000); initialize();
+  applyCopy(); initialize();
 })();

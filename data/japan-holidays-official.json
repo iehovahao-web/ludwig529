@@ -1,0 +1,261 @@
+{
+  "schemaVersion": 1,
+  "source": "https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv",
+  "sourcePage": "https://www8.cao.go.jp/chosei/shukujitsu/gaiyou.html",
+  "sourceEncoding": "Shift_JIS / CP932",
+  "coverage": {
+    "from": "2026-01-01",
+    "through": "2027-12-31",
+    "years": [
+      2026,
+      2027
+    ]
+  },
+  "holidays": [
+    {
+      "date": "2026-01-01",
+      "nameJa": "元日",
+      "id": "newyear",
+      "kind": "national-holiday",
+      "legalBasis": "国民の祝日に関する法律第2条"
+    },
+    {
+      "date": "2026-01-12",
+      "nameJa": "成人の日",
+      "id": "comingage",
+      "kind": "national-holiday",
+      "legalBasis": "国民の祝日に関する法律第2条"
+    },
+    {
+      "date": "2026-02-11",
+      "nameJa": "建国記念の日",
+      "id": "foundation",
+      "kind": "national-holiday",
+      "legalBasis": "国民の祝日に関する法律第2条"
+    },
+    {
+      "date": "2026-02-23",
+      "nameJa": "天皇誕生日",
+      "id": "emperor",
+      "kind": "national-holiday",
+      "legalBasis": "国民の祝日に関する法律第2条"
+    },
+    {
+      "date": "2026-03-20",
+      "nameJa": "春分の日",
+      "id": "vernal",
+      "kind": "national-holiday",
+      "legalBasis": "国民の祝日に関する法律第2条"
+    },
+    {
+      "date": "2026-04-29",
+      "nameJa": "昭和の日",
+      "id": "showa",
+      "kind": "national-holiday",
+      "legalBasis": "国民の祝日に関する法律第2条"
+    },
+    {
+      "date": "2026-05-03",
+      "nameJa": "憲法記念日",
+      "id": "constitution",
+      "kind": "national-holiday",
+      "legalBasis": "国民の祝日に関する法律第2条"
+    },
+    {
+      "date": "2026-05-04",
+      "nameJa": "みどりの日",
+      "id": "greenery",
+      "kind": "national-holiday",
+      "legalBasis": "国民の祝日に関する法律第2条"
+    },
+    {
+      "date": "2026-05-05",
+      "nameJa": "こどもの日",
+      "id": "children",
+      "kind": "national-holiday",
+      "legalBasis": "国民の祝日に関する法律第2条"
+    },
+    {
+      "date": "2026-05-06",
+      "nameJa": "休日",
+      "id": "substitute",
+      "kind": "statutory-day-off",
+      "legalBasis": "国民の祝日に関する法律第3条第2項"
+    },
+    {
+      "date": "2026-07-20",
+      "nameJa": "海の日",
+      "id": "marine",
+      "kind": "national-holiday",
+      "legalBasis": "国民の祝日に関する法律第2条"
+    },
+    {
+      "date": "2026-08-11",
+      "nameJa": "山の日",
+      "id": "mountain",
+      "kind": "national-holiday",
+      "legalBasis": "国民の祝日に関する法律第2条"
+    },
+    {
+      "date": "2026-09-21",
+      "nameJa": "敬老の日",
+      "id": "respect",
+      "kind": "national-holiday",
+      "legalBasis": "国民の祝日に関する法律第2条"
+    },
+    {
+      "date": "2026-09-22",
+      "nameJa": "休日",
+      "id": "citizens",
+      "kind": "statutory-day-off",
+      "legalBasis": "国民の祝日に関する法律第3条第3項"
+    },
+    {
+      "date": "2026-09-23",
+      "nameJa": "秋分の日",
+      "id": "autumnal",
+      "kind": "national-holiday",
+      "legalBasis": "国民の祝日に関する法律第2条"
+    },
+    {
+      "date": "2026-10-12",
+      "nameJa": "スポーツの日",
+      "id": "sports",
+      "kind": "national-holiday",
+      "legalBasis": "国民の祝日に関する法律第2条"
+    },
+    {
+      "date": "2026-11-03",
+      "nameJa": "文化の日",
+      "id": "culture",
+      "kind": "national-holiday",
+      "legalBasis": "国民の祝日に関する法律第2条"
+    },
+    {
+      "date": "2026-11-23",
+      "nameJa": "勤労感謝の日",
+      "id": "labor",
+      "kind": "national-holiday",
+      "legalBasis": "国民の祝日に関する法律第2条"
+    },
+    {
+      "date": "2027-01-01",
+      "nameJa": "元日",
+      "id": "newyear",
+      "kind": "national-holiday",
+      "legalBasis": "国民の祝日に関する法律第2条"
+    },
+    {
+      "date": "2027-01-11",
+      "nameJa": "成人の日",
+      "id": "comingage",
+      "kind": "national-holiday",
+      "legalBasis": "国民の祝日に関する法律第2条"
+    },
+    {
+      "date": "2027-02-11",
+      "nameJa": "建国記念の日",
+      "id": "foundation",
+      "kind": "national-holiday",
+      "legalBasis": "国民の祝日に関する法律第2条"
+    },
+    {
+      "date": "2027-02-23",
+      "nameJa": "天皇誕生日",
+      "id": "emperor",
+      "kind": "national-holiday",
+      "legalBasis": "国民の祝日に関する法律第2条"
+    },
+    {
+      "date": "2027-03-21",
+      "nameJa": "春分の日",
+      "id": "vernal",
+      "kind": "national-holiday",
+      "legalBasis": "国民の祝日に関する法律第2条"
+    },
+    {
+      "date": "2027-03-22",
+      "nameJa": "休日",
+      "id": "substitute",
+      "kind": "statutory-day-off",
+      "legalBasis": "国民の祝日に関する法律第3条第2項"
+    },
+    {
+      "date": "2027-04-29",
+      "nameJa": "昭和の日",
+      "id": "showa",
+      "kind": "national-holiday",
+      "legalBasis": "国民の祝日に関する法律第2条"
+    },
+    {
+      "date": "2027-05-03",
+      "nameJa": "憲法記念日",
+      "id": "constitution",
+      "kind": "national-holiday",
+      "legalBasis": "国民の祝日に関する法律第2条"
+    },
+    {
+      "date": "2027-05-04",
+      "nameJa": "みどりの日",
+      "id": "greenery",
+      "kind": "national-holiday",
+      "legalBasis": "国民の祝日に関する法律第2条"
+    },
+    {
+      "date": "2027-05-05",
+      "nameJa": "こどもの日",
+      "id": "children",
+      "kind": "national-holiday",
+      "legalBasis": "国民の祝日に関する法律第2条"
+    },
+    {
+      "date": "2027-07-19",
+      "nameJa": "海の日",
+      "id": "marine",
+      "kind": "national-holiday",
+      "legalBasis": "国民の祝日に関する法律第2条"
+    },
+    {
+      "date": "2027-08-11",
+      "nameJa": "山の日",
+      "id": "mountain",
+      "kind": "national-holiday",
+      "legalBasis": "国民の祝日に関する法律第2条"
+    },
+    {
+      "date": "2027-09-20",
+      "nameJa": "敬老の日",
+      "id": "respect",
+      "kind": "national-holiday",
+      "legalBasis": "国民の祝日に関する法律第2条"
+    },
+    {
+      "date": "2027-09-23",
+      "nameJa": "秋分の日",
+      "id": "autumnal",
+      "kind": "national-holiday",
+      "legalBasis": "国民の祝日に関する法律第2条"
+    },
+    {
+      "date": "2027-10-11",
+      "nameJa": "スポーツの日",
+      "id": "sports",
+      "kind": "national-holiday",
+      "legalBasis": "国民の祝日に関する法律第2条"
+    },
+    {
+      "date": "2027-11-03",
+      "nameJa": "文化の日",
+      "id": "culture",
+      "kind": "national-holiday",
+      "legalBasis": "国民の祝日に関する法律第2条"
+    },
+    {
+      "date": "2027-11-23",
+      "nameJa": "勤労感謝の日",
+      "id": "labor",
+      "kind": "national-holiday",
+      "legalBasis": "国民の祝日に関する法律第2条"
+    }
+  ]
+}

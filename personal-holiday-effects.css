@@ -1,0 +1,68 @@
+/* Ludwig Cheung site adapter for the Kansai holiday effects (css/kansai/*).
+   The Kansai visuals are used as-is; this file only places the caption in the intro band,
+   applies the blue / red / gold frame, sets readable sizes and wires the motion switch. */
+
+
+/* caption: in the navy band under the banner, never floating over the banner */
+.lc-season-slot{display:block;max-width:100%}
+.seasonal-holiday-note.lc-in-flow{position:relative;inset:auto;top:auto;right:auto;left:auto;z-index:1;width:auto;max-width:min(100%,440px);
+  margin:4px 0 0;padding:12px 16px 14px;text-align:left;pointer-events:auto;user-select:text;
+  background:#000;color:#fff;border:2px solid var(--gold);border-radius:4px;box-shadow:5px 5px 0 var(--red),-5px -5px 0 var(--blue);text-shadow:none}
+.seasonal-holiday-note.lc-in-flow strong{margin:4px 0 6px;font-size:clamp(1.6rem,4.6cqi,2.2rem);color:var(--gold)}
+.seasonal-holiday-note.lc-in-flow>span{font-size:.82rem;line-height:1.5;color:#E6ECF5}
+.seasonal-holiday-note.lc-in-flow .seasonal-label-date{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.08em;color:var(--gold)}
+.seasonal-holiday-note.lc-in-flow .seasonal-label-names{display:flex;flex-wrap:wrap;gap:4px 12px}
+.seasonal-holiday-note.lc-in-flow .seasonal-label-names i{font-style:normal;font-weight:700;font-size:.95rem;color:#fff}
+.seasonal-holiday-note.lc-in-flow .seasonal-label-names i+i{font-weight:500;color:var(--mute-d)}
+.seasonal-holiday-note.lc-in-flow .seasonal-label-hint{font-size:.82rem}
+.seasonal-holiday-note.lc-in-flow .lc-kind{margin-top:6px;font-family:var(--f-mono);font-size:.7rem;color:#FF8F86}
+html[data-season="japanholiday"] .seasonal-holiday-note.lc-in-flow{border-color:var(--red);box-shadow:5px 5px 0 var(--gold),-5px -5px 0 var(--red)}
+/* Halloween spider light switch hangs from the caption's top-right corner */
+.seasonal-holiday-note.lc-in-flow .seasonal-halloween-light-switch{left:auto;right:12px;top:-4px;pointer-events:auto}
+.seasonal-holiday-note.lc-in-flow .seasonal-halloween-light-switch.is-lit{top:10px}
+.seasonal-holiday-note.lc-in-flow.seasonal-caption-halloween{padding-right:64px}
+.seasonal-holiday-note.lc-in-flow.seasonal-caption-christmas{margin-top:22px}
+@media(max-width:520px){
+  .seasonal-holiday-note.lc-in-flow{max-width:100%;padding:10px 12px 12px}
+  .seasonal-holiday-note.lc-in-flow.seasonal-caption-halloween{padding-right:52px}
+}
+/* motion switch: hide only the animated layers, keep the caption */
+.fx-off .seasonal-layer,.fx-off .seasonal-thanksgiving-footer-decor{display:none!important}
+/* sound buttons (off by default) sit clear of the page content */
+.seasonal-sound-toggle{font-family:var(--f-body)}
+/* national-holiday illustration = background of the holiday caption box (the Kansai art, one per holiday).
+   Text stays on the dark left side; the picture opens to the right. No separate floating picture. */
+.seasonal-holiday-note.lc-in-flow.lc-has-art{max-width:min(100%,620px);min-height:200px;padding-right:clamp(16px,34%,230px);overflow:hidden;isolation:isolate;
+  background:#000 var(--lc-art) var(--lc-art-pos,50% 50%)/cover no-repeat}
+.seasonal-holiday-note.lc-in-flow.lc-has-art::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:linear-gradient(90deg,#000 0%,rgba(0,0,0,.92) 45%,rgba(0,0,0,.72) 66%,rgba(0,0,0,.22) 100%)}
+.seasonal-holiday-note.lc-in-flow.lc-has-art>*{position:relative}
+.seasonal-holiday-note.lc-in-flow.lc-has-art :is(strong,.seasonal-label-names,.seasonal-label-hint,.seasonal-label-date){text-shadow:0 1px 3px #000,0 0 12px #000}
+/* garlands and object groups are drawn on transparency: show them whole, standing on the right */
+.seasonal-holiday-note.lc-in-flow.lc-art-feature,.seasonal-holiday-note.lc-in-flow.lc-art-garland{background-size:auto 112%;background-position:right -6% center}
+.seasonal-holiday-note.lc-in-flow.lc-art-garland{background-size:62% auto;background-position:right 4% center}
+@media(max-width:520px){
+  .seasonal-holiday-note.lc-in-flow.lc-has-art{min-height:190px;padding-right:22%}
+  .seasonal-holiday-note.lc-in-flow.lc-has-art::before{background:linear-gradient(90deg,#000 0%,rgba(0,0,0,.9) 60%,rgba(0,0,0,.6) 85%,rgba(0,0,0,.35) 100%)}
+}
+/* page-wide holiday weather (snow / cherry petals / fresh leaves / autumn leaves / mist), inside the Kansai effect layer */
+.lc-weather{inset:0;overflow:hidden;pointer-events:none}
+.lc-fall{position:absolute;top:-8vh;left:var(--x);display:block;opacity:.9;will-change:transform;
+  animation:lcFall var(--duration) linear var(--delay) infinite}
+.lc-fall-snow{width:18px;height:18px;opacity:.85;filter:drop-shadow(0 0 4px #ffffffa0)}
+.lc-fall-leaf{width:26px;height:auto;opacity:.92}
+.lc-fall-petal{width:13px;height:9px;border-radius:90% 10% 90% 10%;background:linear-gradient(135deg,#ffe3ec,#f4a9c0);box-shadow:0 0 4px #f6b7ca80}
+.lc-fall-green{width:14px;height:9px;border-radius:90% 10% 90% 10%;background:linear-gradient(135deg,#c9ec9a,#6fb35a)}
+@keyframes lcFall{
+  0%{transform:translate3d(0,0,0) rotate(0) scale(var(--scale))}
+  25%{transform:translate3d(var(--sway),27vh,0) rotate(calc(var(--spin) * .25)) scale(var(--scale))}
+  50%{transform:translate3d(0,55vh,0) rotate(calc(var(--spin) * .5)) scale(var(--scale))}
+  75%{transform:translate3d(calc(var(--sway) * -1),83vh,0) rotate(calc(var(--spin) * .75)) scale(var(--scale))}
+  100%{transform:translate3d(0,116vh,0) rotate(var(--spin)) scale(var(--scale))}}
+.lc-weather-mist i{position:absolute;left:-40vw;top:var(--y);width:180vw;height:22vh;border-radius:50%;
+  background:radial-gradient(ellipse at center,#dfe9f02e 0%,#dfe9f014 45%,transparent 70%);filter:blur(8px);
+  animation:lcMist var(--duration) ease-in-out var(--delay) infinite alternate}
+@keyframes lcMist{from{transform:translate3d(-8vw,0,0)}to{transform:translate3d(8vw,-2vh,0)}}
+@media (prefers-reduced-motion:reduce){.lc-weather{display:none}}
+
+.lc-season-slot{--gold:#f4b81c;--red:#e3261c;--blue:#2457f5;--mute-d:#b8c9df;--f-mono:ui-monospace,monospace;--f-body:system-ui,sans-serif;margin-block:28px;container-type:inline-size}.seasonal-holiday-note.lc-in-flow{font-family:system-ui,sans-serif}.seasonal-holiday-note.lc-in-flow strong{display:block}
