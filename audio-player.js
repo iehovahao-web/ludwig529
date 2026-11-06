@@ -4,7 +4,7 @@ const audio=document.getElementById('osaka-audio');
 const controls=document.getElementById('osaka-controls');
 if(!audio||!controls)return;
 let tracks;
-try{const response=await fetch('audio-tracks.json?v=20261013-kansai-24');if(!response.ok)throw new Error('Track list unavailable');tracks=await response.json();if(!Array.isArray(tracks)||tracks.length!==12)throw new Error('Invalid track list')}catch(_){return}
+try{const response=await fetch('audio-tracks.json?v=20261013-kansai-24');if(!response.ok)throw new Error('Track list unavailable');tracks=await response.json();if(!Array.isArray(tracks)||tracks.length!==12)throw new Error('Invalid track list')}catch(_){const message=document.getElementById('osaka-error');if(message)message.hidden=false;return}
 const picker=document.getElementById('osaka-track-select'),cover=document.getElementById('osaka-cover');
 let trackIndex=0,generation=0,hasStarted=false;
 function showTrackCover(){const track=tracks[trackIndex];cover.src=track.cover;cover.alt=track.title+' · Ludwig Cheung';}
@@ -38,10 +38,12 @@ function playCurrent(){
  const currentGeneration=generation;
  audio.play().catch(()=>{if(currentGeneration!==generation)return;confirmedPlaying=false;error.hidden=false;state()});
 }
-function loadTrack(index,shouldPlay=false){
+function loadTrack(index,shouldPlay=false,albumCover=false){
  if(index<0||index>=tracks.length)return;
  generation++;audio.pause();confirmedPlaying=false;trackIndex=index;
  const track=tracks[index];picker.value=String(index);
+ audio.dataset.selectedCover=String(albumCover?0:index+1);
+ document.dispatchEvent(new CustomEvent('osaka-track-change',{detail:{index,album:albumCover}}));
  if(hasStarted)showTrackCover();
  document.getElementById('osaka-title').textContent=track.title;
  error.hidden=true;seek.disabled=true;seek.value='0';seek.style.setProperty('--fill','0%');seek.setAttribute('aria-valuetext','0:00');current.textContent='0:00';duration.textContent=format(track.duration);
@@ -49,7 +51,7 @@ function loadTrack(index,shouldPlay=false){
  get('back').disabled=index===0;get('forward').disabled=index===tracks.length-1;
  if(shouldPlay)playCurrent();
 }
-document.addEventListener('osaka-select-track',event=>{loadTrack(event.detail.album?0:event.detail.index,true)});
+document.addEventListener('osaka-select-track',event=>{loadTrack(event.detail.album?0:event.detail.index,true,!!event.detail.album)});
 document.addEventListener('guide-language-change',()=>{if(hasStarted)showTrackCover()});
 picker.addEventListener('change',()=>loadTrack(Number(picker.value),!audio.paused&&!audio.ended));
 get('back').addEventListener('click',()=>loadTrack(trackIndex-1,!audio.paused&&!audio.ended));
@@ -75,7 +77,7 @@ audio.addEventListener('playing',()=>{hasStarted=true;showTrackCover();confirmed
 for(const event of ['play','pause','ended','waiting','loadstart','emptied','abort'])audio.addEventListener(event,()=>{confirmedPlaying=false;state()});
 audio.addEventListener('error',()=>{confirmedPlaying=false;error.hidden=false;seek.disabled=true;get('back').disabled=true;get('forward').disabled=true;state()});
 state();progress();
-loadTrack(0,false);
+loadTrack(0,false,true);
 // Keep native controls available if scripting cannot initialize.
 controls.hidden=false;audio.controls=false;audio.hidden=true;
 })();
