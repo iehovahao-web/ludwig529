@@ -46,7 +46,7 @@
     recovery.hidden = true;
     retry.disabled = true;
     try {
-    const responses = await Promise.all([fetch('osaka-stories.json'), fetch('audio-tracks.json')]);
+    const responses = await Promise.all([fetch('osaka-stories.json?v=20261107-review',{signal:AbortSignal.timeout(15000)}), fetch('audio-tracks.json?v=20261107',{signal:AbortSignal.timeout(15000)})]);
     if (responses.some(r => !r.ok)) throw new Error('Stories unavailable');
     const [copy, tracks] = await Promise.all(responses.map(r => r.json()));
     const albumSource = safeSource(copy.album.source, 'album');

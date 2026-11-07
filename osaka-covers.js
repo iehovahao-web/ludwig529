@@ -48,7 +48,7 @@ window.renderOsakaCovers=async function(grid,tracks){
   art.append(b,glass);card.append(art,label,message);grid.append(card);mirrors.push({panel,index:i+1,pairs});
  });
  document.addEventListener('osaka-track-change',()=>{queueMicrotask(sync)});
- document.getElementById('osaka-track-select').addEventListener('change',()=>{activePanel=Number(audio.dataset.selectedCover);queueMicrotask(sync)});
+ document.getElementById('osaka-track-select').addEventListener('change',()=>queueMicrotask(()=>{activePanel=Number(audio.dataset.selectedCover);sync()}));
  document.addEventListener('osaka-player-state',()=>queueMicrotask(sync));
  document.addEventListener('guide-language-change',()=>queueMicrotask(sync));
  ['playing','pause','timeupdate','loadedmetadata','volumechange','ended','error'].forEach(name=>audio.addEventListener(name,()=>queueMicrotask(sync)));

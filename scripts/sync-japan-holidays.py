@@ -161,7 +161,7 @@ def read_source(input_path: Path | None, url: str) -> bytes:
         return input_path.read_bytes()
     request = urllib.request.Request(
         url,
-        headers={"User-Agent": "kansai-holiday-sync/1.0 (+https://github.com/iehovahao-web/kansai)"},
+        headers={"User-Agent": "ludwig529-holiday-sync/1.0 (+https://github.com/iehovahao-web/ludwig529)"},
     )
     with urllib.request.urlopen(request, timeout=30) as response:
         return response.read()

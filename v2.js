@@ -22,6 +22,6 @@
  async function readJSON(url){const response=await fetch(url,{signal:AbortSignal.timeout(15000)});if(!response.ok)throw Error('Resource unavailable');return response.json()}
  document.addEventListener('guide-language-change',apply);apply();setInterval(tick,1000);
  // Each resource initializes independently; a failed album request must not stop the bio or clock.
- readJSON('bio-ui.json?v=20261107-clean').then(data=>{if(!data||!data.zh||typeof data.zh!=='object')throw Error('Invalid biography');texts=data}).catch(()=>{bioError=showError(document.querySelector('.my-bio'))}).finally(apply);
+ readJSON('bio-ui.json?v=20261107-review').then(data=>{if(!data||!data.zh||typeof data.zh!=='object')throw Error('Invalid biography');texts=data}).catch(()=>{bioError=showError(document.querySelector('.my-bio'))}).finally(apply);
  readJSON('audio-tracks.json').then(async data=>{if(!Array.isArray(data)||data.length!==12||data.some(t=>!t||typeof t.title!=='string'||typeof t.cover!=='string'))throw Error('Invalid tracks');tracks=data;await window.renderOsakaCovers(grid,tracks)}).catch(()=>{grid.replaceChildren();tracksError=showError(grid)}).finally(apply);
 })();

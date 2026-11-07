@@ -161,6 +161,7 @@
     const explicit = String(link.dataset.metricsDetail || '').trim().toLowerCase();
     if (DETAIL_KEYS.has(explicit) && validKey(explicit)) return [explicit];
     const raw = link.getAttribute('href') || '';
+    if (link.matches('.brand') && new URL(link.href).pathname === '/ludwig529/') return ['navigation-brand-top'];
     if (raw.startsWith('#')) {
       const target = raw.slice(1);
       return navigationDetails(link, target);
@@ -228,7 +229,6 @@
     }
     if (kind === 'video') {
       if (media.closest('#yodogawa-light-never-sleeps')) return 'video-yodogawa-light-never-sleeps';
-      if (media.closest('#sound-and-vision')) return 'video-jazz-impression';
     }
     return '';
   }

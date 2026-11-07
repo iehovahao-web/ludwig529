@@ -4,7 +4,7 @@ const audio=document.getElementById('osaka-audio');
 const controls=document.getElementById('osaka-controls');
 if(!audio||!controls)return;
 let tracks;
-try{const response=await fetch('audio-tracks.json?v=20261013-kansai-24');if(!response.ok)throw new Error('Track list unavailable');tracks=await response.json();if(!Array.isArray(tracks)||tracks.length!==12)throw new Error('Invalid track list')}catch(_){const message=document.getElementById('osaka-error');if(message)message.hidden=false;return}
+try{const response=await fetch('audio-tracks.json?v=20261107',{signal:AbortSignal.timeout(15000)});if(!response.ok)throw new Error('Track list unavailable');tracks=await response.json();if(!Array.isArray(tracks)||tracks.length!==12)throw new Error('Invalid track list')}catch(_){const message=document.getElementById('osaka-error');if(message)message.hidden=false;return}
 const picker=document.getElementById('osaka-track-select'),cover=document.getElementById('osaka-cover');
 let trackIndex=0,generation=0,hasStarted=false;
 function showTrackCover(){const track=tracks[trackIndex];cover.src=track.cover;cover.alt=track.title+' · Ludwig Cheung';}
@@ -15,7 +15,7 @@ const current=get('current'),duration=get('duration'),error=get('error');
 const format=n=>{n=Number.isFinite(n)?Math.max(0,n):0;return Math.floor(n/60)+':'+String(Math.floor(n%60)).padStart(2,'0')};
 let confirmedPlaying=false;
 function state(){
- const playing=confirmedPlaying&&!audio.paused&&!audio.ended&&!audio.error;
+ const playing=!audio.paused&&!audio.ended&&!audio.error;
  for(const kind of ['icon','label']){
   controls.querySelector('[data-play-'+kind+']').toggleAttribute('hidden',playing);
   controls.querySelector('[data-pause-'+kind+']').toggleAttribute('hidden',!playing);
