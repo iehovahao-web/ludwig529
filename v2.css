@@ -169,3 +169,5 @@ html[lang=ja] .site-nav .nav-links a{font-size:clamp(12px,3.65vw,16px);padding-i
 .cover-glass-overlay .glass-transport{gap:2px}
 @media(max-width:600px){.cover-glass-overlay{left:2%;bottom:3%;width:96%;padding:4px}.cover-glass-overlay .glass-timeline{gap:4px}}
 @media(max-width:380px){.track-cover-grid{grid-template-columns:minmax(0,1fr)}}
+
+.osaka-album-story>h3{margin:0 0 14px;color:#e9d6a7;font-size:18px;line-height:1.5}

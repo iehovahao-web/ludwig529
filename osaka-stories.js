@@ -62,10 +62,10 @@
     }
     const localized = [];
     function details(kind, story, source, trackId) {
-      const box = document.createElement('details');
+      const box = document.createElement(kind === 'album' ? 'section' : 'details');
       box.className = 'osaka-story-details osaka-' + kind + '-story';
       if (trackId) box.dataset.storyTrack = trackId;
-      const summary = document.createElement('summary');
+      const summary = document.createElement(kind === 'album' ? 'h3' : 'summary');
       const text = document.createElement('div');
       text.className = 'osaka-story-body';
       const credit = document.createElement('p');
@@ -78,7 +78,8 @@
       link.target = '_blank';
       link.rel = 'noopener noreferrer';
       credit.append(byline, document.createTextNode(' · '), link);
-      box.append(summary, text, credit);
+      box.append(summary, text);
+      if (kind !== 'album') box.append(credit);
       localized.push({ box, summary, text, link, story, kind });
       return box;
     }
