@@ -128,3 +128,31 @@ html[lang=ja] .site-nav .nav-links a{font-size:clamp(12px,3.65vw,16px);padding-i
 .site-nav .nav-links .seasonal-nav{white-space:normal;max-width:24em;font-size:clamp(13px,1.2vw,18px);line-height:1.35;text-align:center;text-wrap:balance}
 @media(min-width:1101px){.site-nav .nav-links{min-width:0}.site-nav .nav-links .seasonal-nav{max-width:260px}}
 @media(max-width:600px){.site-nav .nav-links .seasonal-nav{max-width:none;font-size:14px}}
+
+/* Keep the original glass controls beside the cover the visitor selected. */
+.track-cover-card{min-width:0;position:relative;align-self:start}
+.track-cover-card>.track-cover-option{width:100%;display:block}
+.cover-glass-controls{position:relative;margin:8px 0 0;padding:12px;border-radius:18px;background:linear-gradient(145deg,#ffffff24,#071a33d9);border:1px solid #ffffff55;box-shadow:inset 0 1px 0 #ffffff65,0 8px 24px #0005;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.cover-glass-controls[hidden]{display:none!important}
+.cover-glass-controls .glass-transport{justify-content:center}
+.cover-glass-controls input{min-width:0}
+.cover-glass-controls .glass-volume{max-width:100%}
+@media(max-width:600px){.cover-glass-controls{padding:8px}.cover-glass-controls .glass-time{font-size:10px}.cover-glass-controls .glass-transport{gap:8px}.cover-glass-controls .glass-skip{width:36px;height:36px}.cover-glass-controls .glass-play{width:44px;height:44px}}
+
+.cover-glass-controls [hidden],.cover-audio-error[hidden]{display:none!important}
+.cover-now-title{margin:0 0 8px;font-size:12px;line-height:1.5;overflow-wrap:anywhere;color:#fff}
+.cover-audio-error{font-size:13px;color:#ffd8b0}
+.osaka-story-intro,.osaka-album-story{max-width:780px;margin:20px auto 28px;line-height:1.85}
+.osaka-story-intro{font-size:clamp(16px,1.6vw,20px);color:#dce6f3}
+.osaka-story-details{background:#ffffff08;border:1px solid #ffffff22;border-radius:16px;padding:14px 18px;text-align:start;overflow-wrap:anywhere}
+.osaka-story-details summary{cursor:pointer;line-height:1.5;font-weight:600;min-height:30px;padding:6px 0;color:#e9d6a7}
+.osaka-story-details summary:focus-visible{outline:2px solid #e9d6a7;outline-offset:4px}
+.osaka-track-story{margin-top:12px;font-size:14px;line-height:1.8}
+.osaka-story-text{color:#dce6f3;white-space:pre-line}
+.osaka-story-credit{font-size:12px;color:#b8c8db;line-height:1.6}
+.osaka-story-source{color:#e9d6a7;text-underline-offset:4px}
+@media(max-width:600px){.osaka-story-details{padding:10px 12px}.osaka-track-story{font-size:13px}}
+@media(min-width:601px) and (max-width:1000px){.track-cover-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:600px){.cover-glass-controls .glass-skip{width:44px;height:44px;flex-shrink:0}.cover-glass-controls .glass-transport{gap:2px}}
+@media(max-width:360px){.track-cover-grid{grid-template-columns:minmax(0,1fr)}}
+.osaka-stories-recovery{max-width:780px;margin:20px auto;color:#dce6f3}.osaka-stories-retry{font:inherit;min-height:44px;padding:8px 18px;border:1px solid #e9d6a777;border-radius:12px;background:#ffffff14;color:#e9d6a7;cursor:pointer}

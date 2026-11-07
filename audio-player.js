@@ -20,6 +20,7 @@ function state(){
   controls.querySelector('[data-play-'+kind+']').toggleAttribute('hidden',playing);
   controls.querySelector('[data-pause-'+kind+']').toggleAttribute('hidden',!playing);
  }
+ document.dispatchEvent(new Event('osaka-player-state'));
 }
 function progress(){
  const valid=Number.isFinite(audio.duration)&&audio.duration>0;
@@ -35,6 +36,7 @@ seek.addEventListener('input',()=>{
  if(Number.isFinite(audio.duration)&&audio.duration>0){audio.currentTime=Number(seek.value)/1000*audio.duration;progress()}
 });
 function playCurrent(){
+ if(audio.error)audio.load();
  const currentGeneration=generation;
  audio.play().catch(()=>{if(currentGeneration!==generation)return;confirmedPlaying=false;error.hidden=false;state()});
 }
@@ -79,5 +81,5 @@ audio.addEventListener('error',()=>{confirmedPlaying=false;error.hidden=false;se
 state();progress();
 loadTrack(0,false,true);
 // Keep native controls available if scripting cannot initialize.
-controls.hidden=false;audio.controls=false;audio.hidden=true;
+controls.hidden=false;audio.controls=false;audio.hidden=true;audio.dataset.playerReady='true';state();
 })();

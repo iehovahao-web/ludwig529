@@ -1,0 +1,247 @@
+{
+  "version": 1,
+  "artist": "Ludwig Cheung",
+  "classification": "Editorial album narrative based on public album text, not first-person production history",
+  "sourceSha256": "3f156f070c08a8136c265cd64b112cea15535eac12ed7b8b11f3a0feaaaac35b",
+  "album": {
+    "title": "OSAKA|大阪 One City. Many Rhythms.",
+    "source": "https://suno.com/album/f430ccc8-735d-413f-a26d-c6c048c19946",
+    "languages": {
+      "zh": {
+        "intro": "點一張封面，從大阪的夜色聽到清晨。十二首歌，十二段街頭故事。",
+        "story": "夜裡的樂隊還在演奏，清晨的店門已經捲起。這張專輯沿著大阪的街道，把天滿的一句招呼、環狀線上讓出的座位、船場交易裡的人情放進歌裡。\n\n天神祭的燈與太鼓帶來盛夏的熱鬧；文樂舞臺與御堂筋落葉，留下說不出口的心事。城市的聲音在喧鬧與安靜之間轉換。\n\n到了西成清晨五點，生活仍要繼續。十二首歌最後停在「明天見」：今天未必圓滿，還有下一次相聚。"
+      },
+      "en": {
+        "intro": "Choose a cover and listen from Osaka after dark to its early mornings. Twelve songs, twelve street stories.",
+        "story": "A band plays into the night; shop shutters rise at dawn. The album follows everyday encounters through Osaka: a greeting in Tenma, a seat offered on the Loop Line, a little generosity in a Senba bargain.\n\nTenjin Festival brings river lights and drums. Bunraku and falling leaves along Midosuji make room for feelings left unspoken, moving the city from noise into quiet.\n\nAt five in the morning in Nishinari, life carries on. The twelve songs close with “see you tomorrow”: an imperfect day can still leave room for another meeting."
+      },
+      "ja": {
+        "intro": "ジャケットを選んで、大阪の夜から朝へ。12曲で街の物語をたどってみませんか。",
+        "story": "夜のバンドから、朝に上がる店のシャッターへ。天満のあいさつ、環状線で譲る席、船場の商いに交じる人情を、歌が拾っていきます。\n\n天神祭の灯と太鼓が夏をにぎわせ、文楽の舞台と御堂筋の落ち葉が、言えなかった思いを受け止める。街はにぎやかさと静けさの間を行き来します。\n\n西成の朝五時には、また暮らしが続いていく。12曲の終わりは「また明日」。今日はうまくいかなくても、次に会える時間を残します。"
+      },
+      "ko": {
+        "intro": "표지를 골라 오사카의 밤에서 아침까지 들어보세요. 열두 곡에 담긴 거리의 이야기입니다.",
+        "story": "밤의 밴드에서 새벽에 올라가는 가게 셔터까지. 앨범은 덴마의 인사, 순환선에서 양보한 자리, 센바의 흥정에 담긴 정을 노래로 따라갑니다.\n\n덴진마쓰리의 불빛과 북소리가 여름을 채우고, 분라쿠 무대와 미도스지의 낙엽은 말하지 못한 마음을 담습니다. 도시의 소리는 북적임과 고요함 사이를 오갑니다.\n\n니시나리의 새벽 다섯 시에도 삶은 이어집니다. 열두 곡은 ‘내일 봐’로 끝납니다. 오늘이 완벽하지 않아도 다시 만날 시간은 남아 있습니다."
+      },
+      "es": {
+        "intro": "Elige una portada y escucha Osaka desde la noche hasta el amanecer: doce canciones, doce historias de sus calles.",
+        "story": "Una banda toca de noche; al amanecer suben las persianas. El álbum recorre los encuentros de Osaka: un saludo en Tenma, un asiento cedido en la línea circular, un pequeño gesto en un trato de Senba.\n\nEl festival Tenjin trae luces y tambores. El bunraku y las hojas de Midosuji dejan sitio a lo que no se dijo, entre el bullicio y el silencio.\n\nA las cinco de la mañana, Nishinari sigue adelante. Las doce canciones terminan en un «hasta mañana»: un día imperfecto aún deja espacio para volver a encontrarse."
+      },
+      "de": {
+        "intro": "Wähle ein Cover und höre Osaka bei Nacht und am frühen Morgen: zwölf Lieder, zwölf Geschichten von der Straße.",
+        "story": "Nachts spielt eine Band, im Morgengrauen gehen die Rollläden hoch. Das Album folgt Begegnungen in Osaka: einem Gruß in Tenma, einem angebotenen Sitz in der Ringlinie, einer kleinen Zugabe beim Handel in Senba.\n\nDas Tenjin-Fest bringt Lichter und Trommeln. Bunraku und die fallenden Blätter der Midosuji lassen unausgesprochenen Gefühlen Raum. Die Stadt wechselt zwischen Trubel und Stille.\n\nUm fünf Uhr morgens geht das Leben in Nishinari weiter. Die zwölf Lieder enden mit „Bis morgen“: Auch ein unvollkommener Tag lässt Raum für ein Wiedersehen."
+      },
+      "it": {
+        "intro": "Scegli una copertina e ascolta Osaka dalla notte al mattino: dodici canzoni, dodici storie di strada.",
+        "story": "Una band suona nella notte; all’alba si alzano le serrande. L’album segue gli incontri di Osaka: un saluto a Tenma, un posto ceduto sulla linea circolare, un piccolo omaggio in una trattativa a Senba.\n\nLa festa di Tenjin porta luci e tamburi. Il bunraku e le foglie di Midosuji fanno spazio alle parole rimaste in sospeso, tra il rumore e il silenzio.\n\nAlle cinque del mattino, Nishinari va avanti. Le dodici canzoni si chiudono con «a domani»: anche una giornata imperfetta lascia spazio a un nuovo incontro."
+      }
+    }
+  },
+  "labels": {
+    "zh": {
+      "album": "專輯故事",
+      "track": "這首歌的故事",
+      "source": "公開介紹與故事解讀 · Suno"
+    },
+    "en": {
+      "album": "The album story",
+      "track": "The story behind this song",
+      "source": "Public introduction and story reading · Suno"
+    },
+    "ja": {
+      "album": "アルバムの物語",
+      "track": "この曲の物語",
+      "source": "公開紹介文から読み解く物語 · Suno"
+    },
+    "ko": {
+      "album": "앨범 이야기",
+      "track": "이 곡의 이야기",
+      "source": "공개 소개문과 이야기 해설 · Suno"
+    },
+    "es": {
+      "album": "La historia del álbum",
+      "track": "La historia de esta canción",
+      "source": "Presentación pública e interpretación · Suno"
+    },
+    "de": {
+      "album": "Die Geschichte des Albums",
+      "track": "Die Geschichte dieses Liedes",
+      "source": "Öffentliche Einführung und Interpretation · Suno"
+    },
+    "it": {
+      "album": "La storia dell’album",
+      "track": "La storia di questa canzone",
+      "source": "Presentazione pubblica e interpretazione · Suno"
+    }
+  },
+  "tracks": [
+    {
+      "id": "76541ca4-9a99-43c6-8705-c822b31edbfa",
+      "title": "大阪、ええ夜やな｜ OSAKA, WHAT A NIGHT",
+      "source": "https://suno.com/song/76541ca4-9a99-43c6-8705-c822b31edbfa",
+      "story": {
+        "zh": "夏祭的餘熱遇上初秋的風，天王寺、阿倍野與新世界的夜路還不想走完。公開介紹把東非節奏與關西祭囃子放在一起；陌生人的笑聲與閒聊，讓回家的路多延長了一段。",
+        "en": "Summer festival heat meets the first autumn breeze along Tennoji, Abeno and Shinsekai. The public introduction pairs East African rhythms with Kansai festival music; laughter and casual conversation turn the way home into one more walk.",
+        "ja": "夏祭りの熱と初秋の風が交じる、天王寺・阿倍野・新世界の夜。公開紹介文では東アフリカのリズムと関西の祭囃子が出会い、笑い声や雑談が帰り道をもう少し延ばします。",
+        "ko": "여름 축제의 열기와 초가을 바람이 덴노지·아베노·신세카이의 밤에 만납니다. 공개 소개문 속 동아프리카 리듬과 간사이 축제 음악처럼, 웃음과 잡담도 어우러져 귀갓길을 조금 더 늘립니다.",
+        "es": "El calor de las fiestas y la primera brisa otoñal se cruzan en Tennoji, Abeno y Shinsekai. La presentación pública une ritmos de África oriental y música festiva de Kansai; las risas y las charlas alargan el camino a casa.",
+        "de": "Sommerfestwärme und erste Herbstluft treffen in Tennoji, Abeno und Shinsekai aufeinander. Die öffentliche Einführung verbindet ostafrikanische Rhythmen mit Kansai-Festmusik; Lachen und Gespräche verlängern den Heimweg.",
+        "it": "Il calore delle feste e la prima brezza autunnale si incontrano a Tennoji, Abeno e Shinsekai. La presentazione pubblica accosta ritmi dell’Africa orientale e musica festiva del Kansai; risate e chiacchiere allungano il ritorno a casa."
+      }
+    },
+    {
+      "id": "67b4017e-d29e-4803-864a-01b1ed76c173",
+      "title": "TYPHOON AFTER MIDNIGHT｜大阪、午前零時の雨",
+      "source": "https://suno.com/song/67b4017e-d29e-4803-864a-01b1ed76c173",
+      "story": {
+        "zh": "午夜颱風掠過大阪，屋裡的樂隊照樣演奏。1940年代百老匯的華麗碰上拉丁爵士，雨聲與舞步相互映照：風暴還沒停，人們已經一起跳了起來。",
+        "en": "A midnight typhoon sweeps through Osaka while the band keeps playing indoors. Broadway glamour from the 1940s meets Latin jazz, and people start dancing before the rain lets up.",
+        "ja": "大阪の真夜中を台風が抜けても、屋内のバンドは止まりません。1940年代ブロードウェイの華やかさとラテンジャズが重なり、雨がやむ前に人々は踊り始めます。",
+        "ko": "한밤의 오사카에 태풍이 몰아쳐도 실내의 밴드는 계속 연주합니다. 1940년대 브로드웨이의 화려함과 라틴 재즈가 만나고, 비가 그치기 전에 사람들은 춤을 시작합니다.",
+        "es": "Un tifón recorre Osaka a medianoche mientras la banda sigue tocando dentro. El brillo del Broadway de los cuarenta se encuentra con el jazz latino, y la gente empieza a bailar antes de que escampe.",
+        "de": "Ein nächtlicher Taifun zieht durch Osaka, während drinnen die Band weiterspielt. Broadway-Glanz der 1940er trifft auf Latin Jazz, und die Menschen tanzen, bevor der Regen nachlässt.",
+        "it": "Un tifone attraversa Osaka a mezzanotte mentre dentro la band continua a suonare. Il fascino del Broadway degli anni Quaranta incontra il jazz latino, e si comincia a ballare prima che smetta di piovere."
+      }
+    },
+    {
+      "id": "915ab9b4-a89b-4316-bf07-df439698a4aa",
+      "title": "OSAKA, WHAT A NIGHT",
+      "source": "https://suno.com/song/915ab9b4-a89b-4316-bf07-df439698a4aa",
+      "story": {
+        "zh": "夏末的天王寺與新世界，兩人說著不餓、不再喝一杯，卻被章魚燒、小店和閒聊留住。秋風漸起，他們問起明年是否還會在這裡，今晚便再多走一條街。",
+        "en": "At summer’s end, two walkers in Tennoji and Shinsekai claim they want neither food nor another drink, then linger over takoyaki and conversation. As autumn arrives, they wonder about next year—and take one more street tonight.",
+        "ja": "夏の終わり、天王寺と新世界を歩く二人は「お腹は空いていない」と言いつつ、たこ焼きや雑談に足を止めます。来年もここにいるだろうかと思いながら、今夜はもう一本先の通りへ。",
+        "ko": "여름 끝의 덴노지와 신세카이에서 두 사람은 배고프지 않다면서도 다코야키와 잡담 앞에 멈춥니다. 내년에도 여기 있을까 생각하며, 오늘 밤은 한 거리 더 걸어갑니다.",
+        "es": "Al final del verano, dos personas pasean por Tennoji y Shinsekai diciendo que no tienen hambre, pero se detienen entre takoyaki y conversaciones. Se preguntan por el año siguiente y, esta noche, recorren una calle más.",
+        "de": "Zwei Menschen spazieren zum Sommerende durch Tennoji und Shinsekai, angeblich ohne Hunger, bleiben aber bei Takoyaki und Gesprächen stehen. Sie fragen sich nach dem nächsten Jahr und nehmen heute noch eine weitere Straße.",
+        "it": "Alla fine dell’estate, due persone camminano tra Tennoji e Shinsekai dicendo di non avere fame, ma si fermano tra takoyaki e chiacchiere. Si chiedono dell’anno seguente e, stanotte, percorrono un’altra via."
+      }
+    },
+    {
+      "id": "57378dac-7b7b-4c38-b05f-2c6f82e6b02b",
+      "title": "天満、朝からよう喋る。｜天满，一早就聊上了｜TENMA TALKS BEFORE BREAKFAST",
+      "source": "https://suno.com/song/57378dac-7b7b-4c38-b05f-2c6f82e6b02b",
+      "story": {
+        "zh": "捲簾門、腳踏車鈴與一句招呼，叫醒天滿的早晨。鄰里有時多問一句，有時聊得太熱鬧；正是這些日常回應，讓陌生面孔漸漸熟悉。",
+        "en": "Shop shutters, bicycle bells and a greeting start the morning in Tenma. A neighbourhood can be a little too talkative; those everyday exchanges are also how strangers become familiar faces.",
+        "ja": "シャッターと自転車のベル、朝のあいさつで天満が目覚めます。少し話しすぎるくらいのやり取りが、知らない顔を顔なじみに変えていきます。",
+        "ko": "셔터와 자전거 벨, 아침 인사가 덴마를 깨웁니다. 조금 수다스러운 동네의 일상적인 대화가 낯선 얼굴을 익숙한 이웃으로 바꿉니다.",
+        "es": "Persianas, timbres de bicicleta y saludos despiertan Tenma. Un barrio puede hablar un poco de más; esos intercambios cotidianos convierten a los desconocidos en caras familiares.",
+        "de": "Rollläden, Fahrradklingeln und ein Gruß wecken Tenma. Die Nachbarschaft redet manchmal etwas viel; gerade diese alltäglichen Gespräche machen aus Fremden vertraute Gesichter.",
+        "it": "Serrande, campanelli di bicicletta e saluti svegliano Tenma. Il quartiere parla talvolta un po’ troppo; proprio quegli scambi quotidiani trasformano gli sconosciuti in volti familiari."
+      }
+    },
+    {
+      "id": "4a411a29-36a5-4d9d-aac3-b4e1b5077578",
+      "title": "環状線、隣り合わせ。｜环状线，坐在一起。｜SIDE BY SIDE, OSAKA",
+      "source": "https://suno.com/song/4a411a29-36a5-4d9d-aac3-b4e1b5077578",
+      "story": {
+        "zh": "環狀線的車廂擠進不同的人生，也留得下一點照顧：挪開半步、讓出座位、伸手扶一下。這首歌把城市的距離，寫在陌生人短暫並肩的時刻裡。",
+        "en": "The Loop Line brings different lives into one crowded carriage. Making room, offering a seat or lending a hand turns a brief shared journey into a moment of care.",
+        "ja": "混んだ環状線にも、少し詰める、席を譲る、手を貸す余地があります。異なる暮らしが同じ車両に乗る短い時間を、気遣いの物語にした一曲です。",
+        "ko": "붐비는 순환선에도 조금 비켜 주고, 자리를 양보하고, 손을 내밀 틈은 있습니다. 서로 다른 삶이 잠시 같은 객차에 타는 시간을 배려의 이야기로 담았습니다.",
+        "es": "En un vagón lleno de la línea circular aún cabe ceder un asiento, ayudar o hacerse a un lado. La canción encuentra cuidado en ese viaje breve que reúne vidas distintas.",
+        "de": "Auch im vollen Wagen der Ringlinie bleibt Raum, einen Sitz anzubieten, zu helfen oder zur Seite zu rücken. Das Lied findet Rücksicht in einer kurzen Fahrt, die verschiedene Leben zusammenbringt.",
+        "it": "Anche nel vagone affollato della linea circolare c’è spazio per cedere un posto, aiutare o spostarsi. La canzone trova premura nel breve viaggio che riunisce vite diverse."
+      }
+    },
+    {
+      "id": "134015b2-360a-4ef2-a0c9-99142df062ca",
+      "title": "船場、まけときまっせ。｜船场，给你算便宜点。｜SEMBa, LET'S MAKE A DEAL",
+      "source": "https://suno.com/song/134015b2-360a-4ef2-a0c9-99142df062ca",
+      "story": {
+        "zh": "船場的一筆買賣，既要把價錢談清，也有多給一點「おまけ」的人情。公平的交易留下一個再來的理由，生客也慢慢成為熟客。",
+        "en": "A Senba bargain leaves room for both a clear price and a small extra. A fair exchange gives someone a reason to return, turning a customer into a familiar face.",
+        "ja": "船場の商いは値段をきっちり決めながら、小さな「おまけ」も忘れません。公正なやり取りが次の来店につながり、初めての客が顔なじみになっていきます。",
+        "ko": "센바의 흥정에는 분명한 가격과 작은 덤이 함께 있습니다. 공정한 거래가 다시 찾아올 이유를 만들고, 처음 온 손님을 익숙한 얼굴로 바꿉니다.",
+        "es": "Un trato en Senba deja sitio para un precio claro y un pequeño detalle. El intercambio justo invita a regresar y convierte al cliente nuevo en una cara conocida.",
+        "de": "Ein Handel in Senba lässt Platz für einen klaren Preis und eine kleine Zugabe. Ein fairer Abschluss lädt zur Rückkehr ein und macht aus neuen Kunden vertraute Gesichter.",
+        "it": "Una trattativa a Senba lascia posto a un prezzo chiaro e a un piccolo omaggio. Uno scambio corretto invita a tornare, trasformando un nuovo cliente in un volto conosciuto."
+      }
+    },
+    {
+      "id": "b499275c-b821-4a49-875f-a5d861a16a7b",
+      "title": "天神さん、夏が燃える。｜天神祭，整个夏天烧起来了。｜TENJIN NIGHT, SUMMER ON FIRE",
+      "source": "https://suno.com/song/b499275c-b821-4a49-875f-a5d861a16a7b",
+      "story": {
+        "zh": "大川上的船與燈、太鼓與花火，把天神祭聚成明亮的夏夜。祭典每年回來，參與其中的人生卻已不同；今年的相聚，值得今年記住。",
+        "en": "River boats, lights, drums and fireworks fill a Tenjin Festival night. The celebration comes back each year, but the lives gathered around it have changed: this year’s meeting deserves its own memory.",
+        "ja": "大川の船と灯、太鼓と花火が天神祭の夜を彩ります。祭りは毎年戻っても、それぞれの人生は変わる。今年の集まりは、今年の記憶に。",
+        "ko": "강 위의 배와 불빛, 북과 불꽃이 덴진마쓰리의 밤을 채웁니다. 축제는 해마다 돌아와도 삶은 달라집니다. 올해의 만남은 올해의 기억으로 남습니다.",
+        "es": "Barcos, luces, tambores y fuegos artificiales llenan la noche del festival Tenjin. La fiesta regresa cada año, pero las vidas cambian: el encuentro de este año merece su propio recuerdo.",
+        "de": "Boote, Lichter, Trommeln und Feuerwerk füllen die Nacht des Tenjin-Festes. Das Fest kehrt jährlich zurück, doch die Leben verändern sich: Das diesjährige Treffen verdient seine eigene Erinnerung.",
+        "it": "Barche, luci, tamburi e fuochi d’artificio riempiono la notte della festa di Tenjin. La festa torna ogni anno, ma le vite cambiano: l’incontro di quest’anno merita un ricordo tutto suo."
+      }
+    },
+    {
+      "id": "602fd33e-1b63-414d-a5e3-8b82428fd486",
+      "title": "人形は泣かへん。人が泣く。｜人偶不哭，是人在哭。｜THE PUPPET NEVER CRIES",
+      "source": "https://suno.com/song/602fd33e-1b63-414d-a5e3-8b82428fd486",
+      "story": {
+        "zh": "文樂的人偶沒有眼淚，觀眾卻從那張不動的臉上認出自己的愛、離別與遺憾。大阪愛笑，也留得下一處安靜的舞臺，替人說出難以開口的話。",
+        "en": "A Bunraku puppet sheds no tears, yet its still face holds the audience’s love, loss and regret. Osaka’s laughing city makes room for a quiet stage to say what people cannot.",
+        "ja": "文楽の人形は泣かなくても、観客はその顔に愛や別れ、心残りを見つけます。よく笑う大阪にも、言いにくい思いを託せる静かな舞台があります。",
+        "ko": "분라쿠 인형은 울지 않지만 관객은 그 얼굴에서 사랑과 이별, 후회를 발견합니다. 웃음 많은 오사카에도 말하기 어려운 마음을 맡길 조용한 무대가 있습니다.",
+        "es": "La marioneta del bunraku no llora, pero el público reconoce amor, pérdida y pesar en su rostro inmóvil. La Osaka que ríe también tiene un escenario silencioso para lo que cuesta decir.",
+        "de": "Die Bunraku-Puppe weint nicht, doch ihr stilles Gesicht lässt das Publikum Liebe, Verlust und Bedauern erkennen. Auch das lachende Osaka hat eine leise Bühne für schwer auszusprechende Gefühle.",
+        "it": "La marionetta del bunraku non piange, ma il pubblico riconosce amore, perdita e rimpianto nel suo volto immobile. Anche l’Osaka che ride ha un palco silenzioso per ciò che è difficile dire."
+      }
+    },
+    {
+      "id": "9e2fdc3a-aeca-4190-adc6-d5a5c21c9f67",
+      "title": "御堂筋、銀杏が落ちるころ。｜御堂筋，银杏落下的时候。｜WHEN THE GINKGO FALLS",
+      "source": "https://suno.com/song/9e2fdc3a-aeca-4190-adc6-d5a5c21c9f67",
+      "story": {
+        "zh": "御堂筋的銀杏落下，夜裡的街道慢了半拍。離開又回來的人，看見城市與自己都在改變，卻仍能從熟悉的風景裡認出歸屬。",
+        "en": "Ginkgo leaves fall along Midosuji, slowing the autumn night. Returning to streets that have changed, the song looks for a sense of belonging that can survive change in both a city and a person.",
+        "ja": "銀杏が落ちる御堂筋で、秋の夜が少しゆっくり進みます。変わった街に帰り、自分も変わったと気づきながら、それでも感じられる居場所を探します。",
+        "ko": "은행잎이 지는 미도스지에서 가을밤이 잠시 느려집니다. 달라진 거리에 돌아온 사람은 자신도 변했음을 느끼면서, 여전히 남은 익숙함 속에서 소속감을 찾습니다.",
+        "es": "Caen las hojas de ginkgo en Midosuji y la noche otoñal baja el ritmo. Al regresar a calles distintas, la canción busca esa pertenencia que puede permanecer aunque cambien la ciudad y las personas.",
+        "de": "Ginkgoblätter fallen an der Midosuji und verlangsamen die Herbstnacht. Bei der Rückkehr in veränderte Straßen sucht das Lied nach Zugehörigkeit, die Veränderungen von Stadt und Mensch überdauern kann.",
+        "it": "Le foglie di ginkgo cadono lungo Midosuji e rallentano la notte autunnale. Tornando fra strade cambiate, la canzone cerca un’appartenenza che resista ai cambiamenti della città e delle persone."
+      }
+    },
+    {
+      "id": "20368d28-0352-4469-8059-ecf49bb23bfc",
+      "title": "西成、朝五時。｜西成，清晨五点。｜NISHINARI, 5 A.M.",
+      "source": "https://suno.com/song/20368d28-0352-4469-8059-ecf49bb23bfc",
+      "story": {
+        "zh": "西成清晨五點，有人下班、有人出門，還有人沒有睡。新的一天沒有抹去疲憊；慢慢站起、繼續走，已經是這首歌所注視的力量。",
+        "en": "At five in the morning in Nishinari, some finish work, others set out, and some have not slept. Daylight does not erase their exhaustion; the song stays with the effort of getting up and carrying on.",
+        "ja": "朝五時の西成には、仕事を終えた人、出かける人、まだ眠れない人がいます。朝が来ても疲れは消えない。それでも立ち上がり歩く姿を見つめる曲です。",
+        "ko": "니시나리의 새벽 다섯 시, 누군가는 퇴근하고 누군가는 나서며 누군가는 아직 잠들지 못했습니다. 아침이 피로를 지우지는 않지만, 노래는 다시 일어나 걷는 힘을 바라봅니다.",
+        "es": "A las cinco en Nishinari, unos terminan de trabajar, otros salen y algunos siguen sin dormir. El amanecer no borra el cansancio: la canción acompaña el esfuerzo de levantarse y continuar.",
+        "de": "Um fünf Uhr morgens endet für manche in Nishinari die Arbeit, andere gehen los, einige haben nicht geschlafen. Tageslicht nimmt die Müdigkeit nicht fort; das Lied bleibt bei der Kraft des Aufstehens und Weitergehens.",
+        "it": "Alle cinque del mattino a Nishinari qualcuno finisce di lavorare, altri escono e altri non hanno dormito. L’alba non cancella la stanchezza: la canzone segue lo sforzo di alzarsi e andare avanti."
+      }
+    },
+    {
+      "id": "fe94c3af-ca1f-4594-be93-e4661398bc8a",
+      "title": "笑ろとこ。｜先笑一个。｜LET'S LAUGH FIRST",
+      "source": "https://suno.com/song/fe94c3af-ca1f-4594-be93-e4661398bc8a",
+      "story": {
+        "zh": "笑聲付不了帳單，也解決不了所有煩惱。這首歌容得下哭與生氣，也珍惜能一起笑的片刻，讓下一步稍微輕一點。",
+        "en": "Laughter cannot pay a bill or remove every worry. This song leaves room for tears and anger too, while valuing a shared laugh that makes the next step a little lighter.",
+        "ja": "笑っても請求書や悩みはなくなりません。泣く日や怒る日も認めながら、一緒に笑えるひとときが次の一歩を少し軽くします。",
+        "ko": "웃음이 청구서나 모든 걱정을 없애지는 못합니다. 울거나 화낼 날도 받아들이며 함께 웃는 잠깐의 시간이 다음 걸음을 조금 가볍게 합니다.",
+        "es": "Reír no paga las facturas ni resuelve todas las preocupaciones. La canción admite lágrimas y enfado, y aprecia esa risa compartida que hace un poco más ligero el siguiente paso.",
+        "de": "Lachen bezahlt keine Rechnung und löst nicht jede Sorge. Das Lied lässt Tränen und Wut zu und schätzt ein gemeinsames Lachen, das den nächsten Schritt etwas leichter macht.",
+        "it": "Ridere non paga una bolletta né risolve ogni preoccupazione. La canzone ammette lacrime e rabbia, apprezzando una risata condivisa che renda il prossimo passo un po’ più leggero."
+      }
+    },
+    {
+      "id": "512258b2-0fa3-4300-b3bf-86ab45e02ae4",
+      "title": "ほな、また明日。｜那，明天见。｜SEE YOU TOMORROW, OSAKA",
+      "source": "https://suno.com/song/512258b2-0fa3-4300-b3bf-86ab45e02ae4",
+      "story": {
+        "zh": "店鋪關門、燈光暗下，大阪用一句「明天見」告別。今天笑過、哭過，未必有完美結尾；還想再見面，就替明天留了一道門。",
+        "en": "Shops close and lights fade as Osaka says “see you tomorrow.” The day may not end perfectly; wanting to meet again is enough to leave a door open.",
+        "ja": "店が閉まり、灯が落ち、大阪は「また明日」で別れます。今日がきれいに終わらなくても、また会いたい気持ちが明日を残します。",
+        "ko": "가게가 닫히고 불빛이 잦아들면 오사카는 ‘내일 봐’로 인사합니다. 오늘이 완벽하지 않아도 다시 만나고 싶은 마음이 내일의 자리를 남깁니다.",
+        "es": "Cierran las tiendas, bajan las luces y Osaka se despide con un «hasta mañana». El día puede acabar imperfectamente; querer verse otra vez deja una puerta abierta.",
+        "de": "Die Geschäfte schließen, die Lichter verblassen, und Osaka sagt „Bis morgen“. Der Tag muss nicht vollkommen enden; der Wunsch nach einem Wiedersehen hält eine Tür offen.",
+        "it": "I negozi chiudono, le luci calano e Osaka saluta con «a domani». La giornata può finire imperfettamente; il desiderio di rivedersi lascia una porta aperta."
+      }
+    }
+  ]
+}
