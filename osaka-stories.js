@@ -68,19 +68,8 @@
       const summary = document.createElement(kind === 'album' ? 'h3' : 'summary');
       const text = document.createElement('div');
       text.className = 'osaka-story-body';
-      const credit = document.createElement('p');
-      credit.className = 'osaka-story-credit';
-      const byline = document.createElement('span');
-      byline.textContent = copy.artist;
-      const link = document.createElement('a');
-      link.className = 'osaka-story-source';
-      link.href = source;
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
-      credit.append(byline, document.createTextNode(' · '), link);
       box.append(summary, text);
-      if (kind !== 'album') box.append(credit);
-      localized.push({ box, summary, text, link, story, kind });
+      localized.push({ box, summary, text, story, kind });
       return box;
     }
     const intro = document.createElement('p');
@@ -101,7 +90,6 @@
           p.textContent = paragraph;
           return p;
         }));
-        item.link.textContent = labels.source;
       }
     }
     function attachTrackStories() {
