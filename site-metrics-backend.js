@@ -13,15 +13,14 @@
     music: 'music-listeners',
     video: 'video-viewers'
   });
-  const LANGUAGE_CODES = new Set(['zh', 'en', 'ja', 'ko', 'es', 'de', 'fr', 'it', 'ar', 'th']);
+  const LANGUAGE_CODES = new Set(['zh', 'en', 'ja', 'ko', 'es', 'de', 'it']);
   const SEASONAL_AUDIO_THEMES = new Set(['halloween', 'christmas']);
   const SECTION_TARGETS = ['food', 'sea', 'shopping', 'time-weather', 'seasonal-guides'];
   const DETAIL_KEYS = new Set([
     ...SECTION_TARGETS.flatMap(section => [`section-link-${section}`, `module-${section}-view`]),
     'navigation-brand-top',
-    'navigation-header-food', 'navigation-header-sea', 'navigation-header-shopping', 'navigation-header-coupon',
-    'navigation-hero-food', 'navigation-hero-addresses',
-    'navigation-footer-addresses', 'navigation-footer-top', 'navigation-mobile-addresses',
+    ...SECTION_TARGETS.map(section => `navigation-header-${section}`),
+    'navigation-hero-food', 'navigation-footer-top', 'navigation-mobile-seasonal-guides',
     ...Array.from({ length: 12 }, (_, index) => `audio-osaka-track-${String(index + 1).padStart(2, '0')}`),
     ...Array.from({ length: 12 }, (_, index) => `audio-osaka-track-select-${String(index + 1).padStart(2, '0')}`),
     'audio-delicious-in-progress', 'video-yodogawa-light-never-sleeps',
@@ -147,60 +146,16 @@
   }
 
   const sectionTargets = new Set(SECTION_TARGETS);
-  const imageKeys = new Map([
-    ['original-23.jpeg', 'food-kagonoya-image'],
-    ['original-24.jpeg', 'food-kagonoya-image'],
-    ['original-25.jpeg', 'food-kagonoya-image'],
-    ['original-26.jpeg', 'food-aburiya-image'],
-    ['original-27.jpeg', 'food-aburiya-image'],
-    ['original-28.jpeg', 'food-aburiya-image'],
-    ['original-29.jpeg', 'food-daiko-sushi-image'],
-    ['original-30.jpeg', 'food-daiko-sushi-image'],
-    ['original-31.jpeg', 'sea-suma-aquarium-media'],
-    ['original-32.jpeg', 'shopping-kyushin-image'],
-    ['original-33.jpeg', 'shopping-ora2-image'],
-    ['original-34.jpeg', 'shopping-rishiri-image'],
-    ['original-35.jpeg', 'coupon-preview']
-  ]);
-  const venues = [
-    { slug: 'kagonoya', match: value => /1CAEEWiy9WSoGgMV9|kagonoya\.food-kr\.com/.test(value) },
-    { slug: 'aburiya', match: value => /4826901767006629121|apollo-lucias\.jp\/gourmet\/aburiya/.test(value) },
-    { slug: 'daiko-sushi', match: value => /15134371316587236401|daikosushi\.jp/.test(value) },
-    { slug: 'suma-aquarium', match: value => /ChIJgQxfKgCFAGARDDvvrnSqDw0|kobesuma-seaworld\.jp/.test(value) }
-  ];
-  function venueFor(value) { return venues.find(venue => venue.match(value))?.slug || ''; }
-  function contextFor(element) {
-    if (element.closest('#addresses')) return 'addresses';
-    if (element.closest('#food')) return 'food';
-    if (element.closest('#sea')) return 'sea';
-    if (element.closest('#shopping')) return 'shopping';
-    if (element.closest('#coupon')) return 'coupon';
-    return '';
-  }
-  function filename(value) {
-    try { return new URL(value, location.href).pathname.split('/').pop() || ''; }
-    catch (_) { return ''; }
-  }
   function navigationDetails(link, target) {
     const keys = sectionTargets.has(target) ? [`section-link-${target}`] : [];
     let source = '';
     if (link.matches('.brand') && target === 'top') source = 'navigation-brand-top';
     else if (link.closest('.nav-links') && sectionTargets.has(target)) source = `navigation-header-${target}`;
     else if (link.closest('.hero-actions') && sectionTargets.has(target)) source = `navigation-hero-${target}`;
-    else if (link.closest('.footer-links') && ['addresses', 'top'].includes(target)) source = `navigation-footer-${target}`;
-    else if (link.closest('.mobile-bar') && target === 'addresses') source = 'navigation-mobile-addresses';
+    else if (link.closest('.footer-links') && target === 'top') source = `navigation-footer-${target}`;
+    else if (link.closest('.mobile-bar') && target === 'seasonal-guides') source = 'navigation-mobile-seasonal-guides';
     if (source) keys.push(source);
     return keys;
-  }
-  function reviewPlatformDetail(link) {
-    if (!link.closest('.review-platform-links')) return '';
-    const raw = link.getAttribute('href') || '';
-    return '';
-  }
-  function couponDownloadSource(link) {
-    if (link.closest('.mobile-bar')) return 'coupon-download-mobile';
-    if (link.closest('#image-dialog')) return 'coupon-download-dialog';
-    return 'coupon-download-main';
   }
   function linkDetails(link) {
     const explicit = String(link.dataset.metricsDetail || '').trim().toLowerCase();
@@ -210,23 +165,13 @@
       const target = raw.slice(1);
       return navigationDetails(link, target);
     }
-    const review = reviewPlatformDetail(link);
-    if (review) return [review];
-    const context = contextFor(link);
-    const asset = filename(raw);
-    if (asset === 'original-35.jpeg' && link.hasAttribute('download')) return ['coupon-download', couponDownloadSource(link)];
-    if (/shop\.tsuruha-g\.com/.test(raw)) return [`${context === 'addresses' ? 'addresses' : 'coupon'}-tsuruha-locator`];
-    const venue = venueFor(raw);
-    if (!venue) return [];
-    const action = /maps|goo\.gl/.test(raw) ? 'map' : 'site';
-    return [`${context || 'external'}-${venue}-${action}`];
+    return [];
   }
   const controlKeys = new Map([
     ['osaka-back', 'control-osaka-previous'],
     ['osaka-toggle', 'control-osaka-play-toggle'],
     ['osaka-forward', 'control-osaka-next'],
     ['osaka-airplay', 'control-osaka-airplay'],
-    ['video-play', 'control-video-jazz-play'],
     ['delicious-back', 'control-delicious-rewind'],
     ['delicious-toggle', 'control-delicious-play-toggle'],
     ['delicious-forward', 'control-delicious-forward'],
@@ -234,21 +179,9 @@
   ]);
   function buttonDetails(button) {
     const keys = [];
-    const context = contextFor(button);
-    const image = button.getAttribute('data-image');
-    if (image) keys.push(imageKeys.get(filename(image)) || '');
-    if (button.classList.contains('copy-address')) {
-      const venue = venueFor(`${button.getAttribute('data-copy') || ''} ${button.getAttribute('aria-label') || ''}`) ||
-        (/かごの屋/.test(button.dataset.copy || '') ? 'kagonoya' :
-          /あぶりや/.test(button.dataset.copy || '') ? 'aburiya' :
-            /大興寿司/.test(button.dataset.copy || '') ? 'daiko-sushi' :
-              /神戸須磨/.test(button.dataset.copy || '') ? 'suma-aquarium' : '');
-      if (venue) keys.push(`${context || 'addresses'}-${venue}-copy`);
-    }
     let control = controlKeys.get(button.id) || '';
     if (!control && button.classList.contains('video-play')) {
       if (button.closest('#yodogawa-light-never-sleeps')) control = 'control-video-yodogawa-play';
-      else if (button.closest('#sound-and-vision')) control = 'control-video-jazz-play';
     }
     if (control) keys.push(control);
     return keys;

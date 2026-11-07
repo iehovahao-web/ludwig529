@@ -1,6 +1,6 @@
 /* One shared official-holiday loader for the clock and the Kansai holiday effects.
    Copies, all generated from the Cabinet Office CSV by the same Kansai importer
-   (tools/kansai/sync-japan-holidays.py):
+   (scripts/sync-japan-holidays.py):
      1) data/japan-holidays-official.json         - this site (tools/site_sync.py)
      2) assets/data/japan-holidays-official.json  - this site (Mac LaunchAgent)
      3) the Kansai site's public copy on GitHub Pages (Access-Control-Allow-Origin: *)
