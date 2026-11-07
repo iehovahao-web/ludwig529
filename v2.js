@@ -12,7 +12,7 @@
   const l=language(),d=texts[l]||texts.zh||{};
   document.querySelectorAll('[data-bio]').forEach(e=>{if(d[e.dataset.bio]!==undefined)e.textContent=d[e.dataset.bio]});
   const name=names[l]||names.zh;document.title=name+' | Ludwig Cheung';document.querySelector('.brand strong').textContent=name;document.querySelector('.brand').setAttribute('aria-label',name);document.querySelector('#page-title').textContent=name;
-  document.querySelectorAll('.track-cover-option').forEach((b,i)=>b.setAttribute('aria-label',(d.play||play[l]||play.en)+' · '+(i===0?'OSAKA':tracks[i-1].title)));
+  document.querySelectorAll('.track-cover-option').forEach((b,i)=>b.setAttribute('aria-label',(d.play||play[l]||play.en)+' · '+tracks[i].title));
   if(bioError)bioError.textContent=failures.bio[l]||failures.bio.en;
   if(tracksError)tracksError.textContent=failures.tracks[l]||failures.tracks.en;
   tick();

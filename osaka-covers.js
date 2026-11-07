@@ -2,7 +2,7 @@ window.renderOsakaCovers=async function(grid,tracks){
  if(!grid)return;
  const audio=document.getElementById('osaka-audio');
  const source=document.getElementById('osaka-controls');
- const cards=[{cover:'assets/cover.png',title:'OSAKA',album:true},...tracks];
+ const cards=tracks;
  const mirrors=[];
  let activePanel=Number(audio.dataset.selectedCover||0), forwarding=false;
  grid.replaceChildren();
@@ -10,8 +10,8 @@ window.renderOsakaCovers=async function(grid,tracks){
   const selected=audio.dataset.selectedCover;
   grid.querySelectorAll('.track-cover-option').forEach((button,index)=>{
    button.disabled=audio.dataset.playerReady!=='true';
-   button.toggleAttribute('aria-current',selected===String(index));
-   if(selected===String(index))button.setAttribute('aria-current','true');
+   button.toggleAttribute('aria-current',selected===String(index+1));
+   if(selected===String(index+1))button.setAttribute('aria-current','true');
   });
   mirrors.forEach(({panel,index,pairs})=>{
    panel.hidden=activePanel!==index;panel.parentElement.hidden=panel.hidden;
@@ -32,7 +32,7 @@ window.renderOsakaCovers=async function(grid,tracks){
   const b=document.createElement('button');b.type='button';b.className='track-cover-option';b.setAttribute('aria-label',t.title);
   const img=document.createElement('img');img.src=t.cover;img.alt=t.title;img.loading='lazy';
   const label=document.createElement('span');label.textContent=t.title;label.className='track-cover-caption';b.append(img);
-  b.addEventListener('click',()=>{activePanel=i;document.dispatchEvent(new CustomEvent('osaka-select-track',{detail:{album:!!t.album,index:i-1}}));queueMicrotask(sync)});
+  b.addEventListener('click',()=>{activePanel=i+1;document.dispatchEvent(new CustomEvent('osaka-select-track',{detail:{album:false,index:i}}));queueMicrotask(sync)});
   const panel=source.cloneNode(true);panel.removeAttribute('id');panel.classList.add('cover-glass-controls');panel.hidden=true;
   const originals=Array.from(source.querySelectorAll('*')),copies=Array.from(panel.querySelectorAll('*'));
   const pairs=originals.map((original,j)=>[original,copies[j]]);
@@ -45,7 +45,7 @@ window.renderOsakaCovers=async function(grid,tracks){
   const message=document.createElement('p');message.className='cover-audio-error';message.hidden=true;message.setAttribute('role','status');
   const art=document.createElement('div');art.className='track-cover-art';
   const glass=document.createElement('div');glass.className='single-controls cover-glass-overlay';glass.append(panel);
-  art.append(b,glass);card.append(art,label,message);grid.append(card);mirrors.push({panel,index:i,pairs});
+  art.append(b,glass);card.append(art,label,message);grid.append(card);mirrors.push({panel,index:i+1,pairs});
  });
  document.addEventListener('osaka-track-change',()=>{queueMicrotask(sync)});
  document.getElementById('osaka-track-select').addEventListener('change',()=>{activePanel=Number(audio.dataset.selectedCover);queueMicrotask(sync)});
