@@ -2,7 +2,7 @@
   const root = document.querySelector('#anna-videos');
   if (!root) return;
   try {
-    const response = await fetch('anna-videos.json');
+    const response = await fetch('anna-videos.json?checked=' + Date.now(), { cache: 'no-store' });
     if (!response.ok) throw Error();
     const data = await response.json();
     const fragment = document.createDocumentFragment();
