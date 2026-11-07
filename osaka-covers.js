@@ -19,7 +19,7 @@ window.renderOsakaCovers=async function(grid,tracks){
    const message=panel.closest('.track-cover-card').querySelector('.cover-audio-error');
    message.hidden=activePanel!==index||document.getElementById('osaka-error').hidden;message.textContent=document.getElementById('osaka-error').textContent;
    pairs.forEach(([original,copy])=>{
-    copy.hidden=original.hidden;
+    copy.toggleAttribute('hidden',original.hasAttribute('hidden'));
     if('disabled' in original)copy.disabled=original.disabled;
     if(original.tagName==='INPUT'){copy.value=original.value;copy.style.cssText=original.style.cssText;}
     if(original.classList.contains('glass-time')||original.classList.contains('single-accessible')||original.id==='osaka-device-volume')copy.textContent=original.textContent;
