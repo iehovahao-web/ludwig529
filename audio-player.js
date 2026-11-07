@@ -38,7 +38,7 @@ seek.addEventListener('input',()=>{
 function playCurrent(){
  if(audio.error)audio.load();
  const currentGeneration=generation;
- audio.play().catch(()=>{if(currentGeneration!==generation)return;confirmedPlaying=false;error.hidden=false;state()});
+ audio.play().catch(failure=>{if(currentGeneration!==generation||(failure.name==='AbortError'&&audio.paused&&!audio.error))return;confirmedPlaying=false;error.hidden=false;state()});
 }
 function loadTrack(index,shouldPlay=false,albumCover=false){
  if(index<0||index>=tracks.length)return;
