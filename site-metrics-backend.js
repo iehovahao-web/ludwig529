@@ -3,7 +3,7 @@
 
   const API_ORIGIN = 'https://abacus.jasoncameron.dev';
   const NAMESPACE = 'iehovahao-web.github.io-kansai';
-  const PRODUCTION_HOST = 'iehovahao-web.github.io';
+  const PRODUCTION_HOST = 'japan.heylc.me';
   const PRODUCTION_PATH = /^\/ludwig529(?:\/|$)/i;
   const REQUEST_TIMEOUT_MS = 4500;
   const DETAIL_SESSION_PREFIX = 'kansai-global-detail-session-v1:';
@@ -33,7 +33,8 @@
   ]);
 
   const isProduction = location.protocol === 'https:' &&
-    location.hostname === PRODUCTION_HOST && PRODUCTION_PATH.test(location.pathname);
+    (location.hostname === PRODUCTION_HOST ||
+      (location.hostname === 'iehovahao-web.github.io' && PRODUCTION_PATH.test(location.pathname)));
   if (!isProduction) return;
   const isVerification = new URLSearchParams(location.search).has('verify');
 
@@ -161,7 +162,7 @@
     const explicit = String(link.dataset.metricsDetail || '').trim().toLowerCase();
     if (DETAIL_KEYS.has(explicit) && validKey(explicit)) return [explicit];
     const raw = link.getAttribute('href') || '';
-    if (link.matches('.brand') && new URL(link.href).pathname === '/ludwig529/') return ['navigation-brand-top'];
+    if (link.matches('.brand') && ['/', '/ludwig529/'].includes(new URL(link.href).pathname)) return ['navigation-brand-top'];
     if (raw.startsWith('#')) {
       const target = raw.slice(1);
       return navigationDetails(link, target);
