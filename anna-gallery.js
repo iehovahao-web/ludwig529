@@ -2,7 +2,7 @@
   const root = document.querySelector('#anna-videos');
   if (!root) return;
   try {
-    const response = await fetch('anna-videos.json?checked=' + Date.now(), { cache: 'no-store' });
+    const response = await fetch('anna-videos.json?checked=' + Date.now(), { cache: 'no-store', signal: AbortSignal.timeout(12000) });
     if (!response.ok) throw Error();
     const data = await response.json();
     const fragment = document.createDocumentFragment();
@@ -43,6 +43,14 @@
     document.addEventListener('guide-language-change', localizeDates);
     localizeDates();
   } catch (e) {
-    // Keep localized unavailable state; never show unrelated channel uploads.
+    const labels = {zh:'暫時無法載入，前往 YouTube 觀看系列 ↗', en:'Unable to load. Watch the series on YouTube ↗', ja:'読み込めませんでした。YouTube でシリーズを見る ↗', ko:'불러올 수 없습니다. YouTube에서 시리즈 보기 ↗', es:'No se pudo cargar. Ver la serie en YouTube ↗', de:'Laden fehlgeschlagen. Serie auf YouTube ansehen ↗', it:'Caricamento non riuscito. Guarda la serie su YouTube ↗'};
+    const link = document.createElement('a');
+    link.href = 'https://www.youtube.com/playlist?list=PLEBUD8yO9qkE';
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    const update = () => { link.textContent = labels[document.querySelector('#language-select').value] || labels.en; };
+    update();
+    root.replaceChildren(link);
+    document.addEventListener('guide-language-change', update);
   }
 })();
