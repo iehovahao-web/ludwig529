@@ -1,6 +1,60 @@
 {
   "items": [
     {
+      "id": "ZevWxC6FlTM",
+      "title": "咖啡店偶遇",
+      "published": "2026-11-17",
+      "published_at": "2026-11-17T00:00:02+00:00",
+      "url": "https://www.youtube.com/watch?v=ZevWxC6FlTM",
+      "thumb": "https://i.ytimg.com/vi/ZevWxC6FlTM/hqdefault.jpg",
+      "series_source": "https://www.youtube.com/playlist?list=PLEBUD8yO9qkE"
+    },
+    {
+      "id": "UYDXz7RsVxE",
+      "title": "定格双人穿搭",
+      "published": "2026-11-16",
+      "published_at": "2026-11-16T00:00:05+00:00",
+      "url": "https://www.youtube.com/watch?v=UYDXz7RsVxE",
+      "thumb": "https://i.ytimg.com/vi/UYDXz7RsVxE/hqdefault.jpg",
+      "series_source": "https://www.youtube.com/playlist?list=PLEBUD8yO9qkE"
+    },
+    {
+      "id": "L0vuDWW2k1o",
+      "title": "DV里的早晨",
+      "published": "2026-11-15",
+      "published_at": "2026-11-15T00:00:40+00:00",
+      "url": "https://www.youtube.com/watch?v=L0vuDWW2k1o",
+      "thumb": "https://i.ytimg.com/vi/L0vuDWW2k1o/hqdefault.jpg",
+      "series_source": "https://www.youtube.com/playlist?list=PLEBUD8yO9qkE"
+    },
+    {
+      "id": "TvIDLYR3Kpo",
+      "title": "餐厅里的晚餐",
+      "published": "2026-11-14",
+      "published_at": "2026-11-14T00:00:20+00:00",
+      "url": "https://www.youtube.com/watch?v=TvIDLYR3Kpo",
+      "thumb": "https://i.ytimg.com/vi/TvIDLYR3Kpo/hqdefault.jpg",
+      "series_source": "https://www.youtube.com/playlist?list=PLEBUD8yO9qkE"
+    },
+    {
+      "id": "gCB4rZGxkvI",
+      "title": "Ludwig & Anna & Aria",
+      "published": "2026-11-13",
+      "published_at": "2026-11-13T00:00:18+00:00",
+      "url": "https://www.youtube.com/watch?v=gCB4rZGxkvI",
+      "thumb": "https://i.ytimg.com/vi/gCB4rZGxkvI/hqdefault.jpg",
+      "series_source": "https://www.youtube.com/playlist?list=PLEBUD8yO9qkE"
+    },
+    {
+      "id": "SXfvgqHObBc",
+      "title": "南欧双人漫游",
+      "published": "2026-11-12",
+      "published_at": "2026-11-12T00:00:16+00:00",
+      "url": "https://www.youtube.com/watch?v=SXfvgqHObBc",
+      "thumb": "https://i.ytimg.com/vi/SXfvgqHObBc/hqdefault.jpg",
+      "series_source": "https://www.youtube.com/playlist?list=PLEBUD8yO9qkE"
+    },
+    {
       "id": "Hh4aFv8GLRY",
       "title": "沿着海岸，开进夕阳",
       "published": "2026-11-08",
@@ -244,10 +298,10 @@
       "series_source": "https://www.youtube.com/playlist?list=PLEBUD8yO9qkE"
     }
   ],
-  "fetched_at": "2026-11-10T23:39:25.521914+00:00",
+  "fetched_at": "2026-11-18T13:13:13.244999+00:00",
   "complete_series_verified": true,
   "automatic_updates_enabled": false,
   "source": "https://www.youtube.com/playlist?list=PLEBUD8yO9qkE",
   "sync_method": "public_playlist_and_public_watch_pages",
-  "public_playlist_verified_count": 25
+  "public_playlist_verified_count": 31
 }

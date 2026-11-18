@@ -95,7 +95,8 @@ def main():
                public_playlist_verified_count=len(verified), complete_series_verified=True,
                automatic_updates_enabled=False)
     if new['items'] == old['items'] and old.get('sync_method') == new['sync_method']:
-        print('No new or changed public series videos; verified', len(verified))
+        print('Local snapshot already matches public series; verified', len(verified))
+        print('Publication is NOT verified: compare anna-videos.json with origin/main and the live site even when local content is unchanged.')
         return
     temp = DEST.with_suffix('.tmp')
     temp.write_text(json.dumps(new, ensure_ascii=False, indent=2) + '\n')
