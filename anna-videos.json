@@ -1,6 +1,33 @@
 {
   "items": [
     {
+      "id": "YfH4oGEtw7k",
+      "title": "街角换装，踩上同一拍",
+      "published": "2026-11-21",
+      "published_at": "2026-11-21T00:00:16+00:00",
+      "url": "https://www.youtube.com/watch?v=YfH4oGEtw7k",
+      "thumb": "https://i.ytimg.com/vi/YfH4oGEtw7k/hqdefault.jpg",
+      "series_source": "https://www.youtube.com/playlist?list=PLEBUD8yO9qkE"
+    },
+    {
+      "id": "1yaCabWUZtA",
+      "title": "把默契跳成一支舞",
+      "published": "2026-11-20",
+      "published_at": "2026-11-20T00:00:35+00:00",
+      "url": "https://www.youtube.com/watch?v=1yaCabWUZtA",
+      "thumb": "https://i.ytimg.com/vi/1yaCabWUZtA/hqdefault.jpg",
+      "series_source": "https://www.youtube.com/playlist?list=PLEBUD8yO9qkE"
+    },
+    {
+      "id": "rZ0RYjoFabI",
+      "title": "林间遇见恐龙",
+      "published": "2026-11-19",
+      "published_at": "2026-11-19T00:00:16+00:00",
+      "url": "https://www.youtube.com/watch?v=rZ0RYjoFabI",
+      "thumb": "https://i.ytimg.com/vi/rZ0RYjoFabI/hqdefault.jpg",
+      "series_source": "https://www.youtube.com/playlist?list=PLEBUD8yO9qkE"
+    },
+    {
       "id": "ZevWxC6FlTM",
       "title": "咖啡店偶遇",
       "published": "2026-11-17",
@@ -298,10 +325,10 @@
       "series_source": "https://www.youtube.com/playlist?list=PLEBUD8yO9qkE"
     }
   ],
-  "fetched_at": "2026-11-18T13:13:13.244999+00:00",
+  "fetched_at": "2026-11-21T04:03:16.219011+00:00",
   "complete_series_verified": true,
   "automatic_updates_enabled": false,
   "source": "https://www.youtube.com/playlist?list=PLEBUD8yO9qkE",
   "sync_method": "public_playlist_and_public_watch_pages",
-  "public_playlist_verified_count": 31
+  "public_playlist_verified_count": 34
 }
