@@ -1,6 +1,15 @@
 {
   "items": [
     {
+      "id": "uDmazE0BVSA",
+      "title": "一个亿都上交，零花钱另说",
+      "published": "2026-11-22",
+      "published_at": "2026-11-22T00:00:21+00:00",
+      "url": "https://www.youtube.com/watch?v=uDmazE0BVSA",
+      "thumb": "https://i.ytimg.com/vi/uDmazE0BVSA/hqdefault.jpg",
+      "series_source": "https://www.youtube.com/playlist?list=PLEBUD8yO9qkE"
+    },
+    {
       "id": "YfH4oGEtw7k",
       "title": "街角换装，踩上同一拍",
       "published": "2026-11-21",
@@ -325,10 +334,10 @@
       "series_source": "https://www.youtube.com/playlist?list=PLEBUD8yO9qkE"
     }
   ],
-  "fetched_at": "2026-11-21T04:03:16.219011+00:00",
+  "fetched_at": "2026-11-22T00:43:41.603043+00:00",
   "complete_series_verified": true,
   "automatic_updates_enabled": false,
   "source": "https://www.youtube.com/playlist?list=PLEBUD8yO9qkE",
   "sync_method": "public_playlist_and_public_watch_pages",
-  "public_playlist_verified_count": 34
+  "public_playlist_verified_count": 35
 }
