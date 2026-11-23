@@ -1,6 +1,33 @@
 {
   "items": [
     {
+      "id": "p9S7HoIVHVA",
+      "title": "感恩节，回家就开饭",
+      "published": "2026-11-23",
+      "published_at": "2026-11-23T08:00:27+00:00",
+      "url": "https://www.youtube.com/watch?v=p9S7HoIVHVA",
+      "thumb": "https://i.ytimg.com/vi/p9S7HoIVHVA/hqdefault.jpg",
+      "series_source": "https://www.youtube.com/playlist?list=PLEBUD8yO9qkE"
+    },
+    {
+      "id": "PK5URP9CeRc",
+      "title": "感恩节厨房",
+      "published": "2026-11-23",
+      "published_at": "2026-11-23T00:00:35+00:00",
+      "url": "https://www.youtube.com/watch?v=PK5URP9CeRc",
+      "thumb": "https://i.ytimg.com/vi/PK5URP9CeRc/hqdefault.jpg",
+      "series_source": "https://www.youtube.com/playlist?list=PLEBUD8yO9qkE"
+    },
+    {
+      "id": "2rrnFeRtUvE",
+      "title": "从沙漠跳到街角",
+      "published": "2026-11-23",
+      "published_at": "2026-11-23T00:00:32+00:00",
+      "url": "https://www.youtube.com/watch?v=2rrnFeRtUvE",
+      "thumb": "https://i.ytimg.com/vi/2rrnFeRtUvE/hqdefault.jpg",
+      "series_source": "https://www.youtube.com/playlist?list=PLEBUD8yO9qkE"
+    },
+    {
       "id": "uDmazE0BVSA",
       "title": "一个亿都上交，零花钱另说",
       "published": "2026-11-22",
@@ -334,10 +361,10 @@
       "series_source": "https://www.youtube.com/playlist?list=PLEBUD8yO9qkE"
     }
   ],
-  "fetched_at": "2026-11-22T00:43:41.603043+00:00",
+  "fetched_at": "2026-11-23T09:39:23.132944+00:00",
   "complete_series_verified": true,
   "automatic_updates_enabled": false,
   "source": "https://www.youtube.com/playlist?list=PLEBUD8yO9qkE",
   "sync_method": "public_playlist_and_public_watch_pages",
-  "public_playlist_verified_count": 35
+  "public_playlist_verified_count": 38
 }
