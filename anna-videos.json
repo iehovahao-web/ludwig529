@@ -1,6 +1,24 @@
 {
   "items": [
     {
+      "id": "cyD5RNoU0Fw",
+      "title": "把车开进云端彩虹",
+      "published": "2026-11-24",
+      "published_at": "2026-11-24T00:00:24+00:00",
+      "url": "https://www.youtube.com/watch?v=cyD5RNoU0Fw",
+      "thumb": "https://i.ytimg.com/vi/cyD5RNoU0Fw/hqdefault.jpg",
+      "series_source": "https://www.youtube.com/playlist?list=PLEBUD8yO9qkE"
+    },
+    {
+      "id": "ld3LK2S43AI",
+      "title": "这一桌，都是想见的人",
+      "published": "2026-11-23",
+      "published_at": "2026-11-23T12:00:04+00:00",
+      "url": "https://www.youtube.com/watch?v=ld3LK2S43AI",
+      "thumb": "https://i.ytimg.com/vi/ld3LK2S43AI/hqdefault.jpg",
+      "series_source": "https://www.youtube.com/playlist?list=PLEBUD8yO9qkE"
+    },
+    {
       "id": "p9S7HoIVHVA",
       "title": "感恩节，回家就开饭",
       "published": "2026-11-23",
@@ -361,10 +379,10 @@
       "series_source": "https://www.youtube.com/playlist?list=PLEBUD8yO9qkE"
     }
   ],
-  "fetched_at": "2026-11-23T09:39:23.132944+00:00",
+  "fetched_at": "2026-11-24T00:50:44.966624+00:00",
   "complete_series_verified": true,
   "automatic_updates_enabled": false,
   "source": "https://www.youtube.com/playlist?list=PLEBUD8yO9qkE",
   "sync_method": "public_playlist_and_public_watch_pages",
-  "public_playlist_verified_count": 38
+  "public_playlist_verified_count": 40
 }
